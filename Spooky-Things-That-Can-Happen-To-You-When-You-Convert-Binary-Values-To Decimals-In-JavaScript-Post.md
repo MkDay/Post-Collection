@@ -1,6 +1,6 @@
 # Spooky-Things-That-Can-Happen-To-You-When-You-Convert-Binary-Values-To Decimals-In-JavaScript-Post.
 
-Pending Post...
+Published @DEV 01/11/2021
 
 # Spooky Things That Can Happen To You When You Convert Binary Values To Decimals In JavaScript
 
