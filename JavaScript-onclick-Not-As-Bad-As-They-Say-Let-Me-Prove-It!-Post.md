@@ -1,18 +1,18 @@
 # JavaScript onclick Not As Bad As They Say Let Me Prove It!
  
-Warning!
+__*Warning!*__
 
 MDN docs recommands `addEventListener` instead of `onclick` as follows.
 
 [It says](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener),
 
->The addEventListener() method is the recommended way to register an event listener. The benefits are as follows:
-
-* It allows adding more than one handler for an event. This is particularly useful for libraries, JavaScript modules, or any other kind of code that needs to work well with other libraries or extensions.
-
-* In contrast to using an *onXYZ* property, it gives you finer-grained control of the phase when the listener is activated (capturing vs. bubbling).
-
-* It works on any event target, not just HTML or SVG elements.
+> **The addEventListener() method is the recommended way to register an event listener. The benefits are as follows:**
+>
+> * It allows adding more than one handler for an event. This is particularly useful for libraries, JavaScript modules, or any other kind of code that needs to work well with other libraries or extensions.
+>
+> * In contrast to using an *onXYZ* property, it gives you finer-grained control of the phase when the listener is activated (capturing vs. bubbling).
+>
+> * It works on any event target, not just HTML or SVG elements.
 
 This seems like a kind of discouraging statement about the use of `onclick`. However `onclick` can compete with `addEventListener` for the most part. 
 
@@ -25,8 +25,7 @@ There are one child `button` element and its parent `div` element. In JavaScript
 <div id="container">
   
  <button id="btn-add">Add</button>
- <button id="btn-subtract">Subtract</button>
-   
+    
 </div>
 
 ```
@@ -38,7 +37,8 @@ Using [event delegation](https://davidwalsh.name/event-delegate), we can add one
 
 ```javascript
 let container = document.querySelector('#container');
-let btnArray = document.getElementsByTagName('button');
+let addBtn = document.querySelector('#btn-add');
+
 let num1 = 6;
 let num2 = 2;
 let result = 0;
@@ -56,7 +56,7 @@ function calculate(e) {
 ```javascript
 
 //addEventListener
-//container.addEventListener('click', calculate);
+container.addEventListener('click', calculate);
 
 // output after clicking the button 3 times.
 /*
@@ -319,17 +319,18 @@ addBtn.onclick = calculate;
 #### 1. Event Overwriting (Single element - multiple handlers)
 
 The `addEventListener` works well with the following two handlers. 
-* At first it calculates the result.
-* Then, show the result.
+* First handler - *calculate*: calculates the result.
+* Second handler - *showResult*: shows the result.
 
 If we use `onclick` in this case, the first handler will be overwritten by the second one, so we will never get the calculated result. 
 
 ```javascript
+let container = document.querySelector('#container');
+let addBtn = document.querySelector('#btn-add');
+
 let num1 = 6;
 let num2 = 2;
 let result = 0;
-
-let addBtn = document.querySelector('#btn-add');
 
 function calculate(e) {
   if(e.target) {
@@ -381,7 +382,7 @@ addBtn.onclick = showResult;
 
 ### Let's Summarize
 
-Now you can see `onclick` can do almost everything except registering multiple handlers to a single element. However it is good to mention there is a lot of things to consider before selecting the right one for your specific needs. This is just to prove that there are still some cases where we can use 'onclick'.
+Now you can see `onclick` can do almost everything except registering multiple handlers to a single element. However it is good to mention there is a lot of things to consider before selecting the right one for your specific needs. This is just to prove that there are still some cases where we can use `onclick`.
 
 
 
