@@ -14,11 +14,11 @@ MDN docs recommands `addEventListener` instead of `onclick` as follows.
 >
 > * It works on any event target, not just HTML or SVG elements.
 
-This seems like a kind of discouraging statement about the use of `onclick`. However `onclick` can compete with `addEventListener` for the most part. 
+It sounds like a discouraging statement about the use of `onclick`. However, `onclick` can compete with `addEventListener` for the most part. 
 
 To prove that, let's consider the following simple program.
  
-There are one child `button` element and its parent `div` element. In JavaScript, there is a function named *calculate* to use as the event handler when the `button` is clicked.
+There are a child `button` element and its parent `div` element. And there is a function named *calculate* to use as the event handler when the `button` gets clicked.
 
 ###### HTML 
 ```html
@@ -33,7 +33,7 @@ There are one child `button` element and its parent `div` element. In JavaScript
 ### __*onclick*__ Works Well For The Following Use-cases
 #### 1. Event Delegation (Multiple elements - single handler)
 
-Using [event delegation](https://davidwalsh.name/event-delegate), we can add one event handler only for the parent element and recognize the current child element that the event is fired on using [`event.target.matches()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/matches).
+Using [event delegation](https://davidwalsh.name/event-delegate), we can add one event handler only for the parent element and recognize the current child element that the click event is occurred on, using [`event.target.matches()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/matches).
 
 ```javascript
 let container = document.querySelector('#container');
@@ -83,9 +83,9 @@ container.onclick = calculate;
 ```
 #### 2. Event Bubbling & Capture
 
-I don't suppose to explain what these [bubbling and capturing](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#event_bubbling_and_capture) here, however it is good to mention that the bubbling is the default behavior of almost every modern browser.
+I don't suppose to explain [*bubbling and capturing*](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#event_bubbling_and_capture) here. However, it is good to mention that the bubbling event is the default behavior of almost every modern browser.
 
-The `addEventListener`, has an option to use event bubbling or capture and, it is pretty clear that there is no such option with `onclick` for the capturing phase. 
+The `addEventListener` has an option to use event bubbling or capture and, it is pretty clear that there is no such option with `onclick` for the capturing phase. 
 
 ```javascript
 
@@ -103,11 +103,11 @@ function calculate(e) {
 
 ```
 
-In the following code first we are going to retrieve calculated result along with the event handler that attached to the button.
+First, we retrieve the *calculated result* using the event handler of the `button`.
 
 And then display the result on the `div` as the *current result*. 
 
-Bubbling works well in this case for the both `onclick` and `addEventListener`. 
+Bubbling works well in this case for both `onclick` and `addEventListener`. 
 
 ##### Bubbling - addEventListener
 ```javascript
@@ -156,7 +156,7 @@ addBtn.onclick = calculate;
 
 ```
 
-Now we are going to first display the result as *previous result* on the `div` and then retrieve the calculated result along with the event handler that attached to the button. 
+Now we first display the result as *previous result* on the `div` and then retrieve the *calculated result* using the event handler of the `button`. 
 
 Here we specify the optional argument of the `addEventListener` which is, [*useCapture*](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#syntax) as *true* for the parent element.
 
@@ -172,7 +172,7 @@ container.addEventListener('click', function() {
 
 addBtn.addEventListener('click', calculate);
 
-// ouput after clicking the button 3 times.
+// output after clicking the button 3 times.
 /*
 "previous result: 0"
 "calculated result: 8"
@@ -183,7 +183,7 @@ addBtn.addEventListener('click', calculate);
 */
 
 ```
-With `onclick`, we cannot use event capturing, however this is kind of achievable using [event delegation](https://davidwalsh.name/event-delegate).
+We cannot use the event capture with the `onclick`. However, this is kind of achievable using [event delegation](https://davidwalsh.name/event-delegate).
 
 ##### Capture - onclick (using event delegation)
 ```javascript
@@ -198,7 +198,7 @@ container.onclick = function(e) {
   }
 }
 
-// ouput after clicking the button 3 times.
+// output after clicking the button 3 times.
 /*
 "previous result: 0"
 "calculated result: 8"
@@ -212,9 +212,9 @@ container.onclick = function(e) {
 
 #### 3. Remove event listeners
 
-Here what we need is add the `num1 + num2` to the `result` only once and stop listening to the event after the first click is occurred.
+Here we add the `num1 + num2` to the `result` only once and stop listening to the event after the first click has occurred.
 
-There is a method called [`removeEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener) which accepts the same arguments that assigned to the `addEventListener` previously. It removes the previously added *event listener* from the element.
+There is a method called [`removeEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener), which accepts the same arguments that assigned to the `addEventListener` previously. It removes the previously-added *event listener* from the element.
 
 ```javascript
 let container = document.querySelector('#container');
@@ -271,7 +271,7 @@ addBtn.addEventListener('click', calculate);
 
 ```
 
-There is no explicit way to remove the `onclick` event, but if we make the `onclick` attribute as `null`, it will do the job as we want.
+There is no obvious way to remove the `onclick` event, but if we make the `onclick` attribute as `null` it will do the job as we supposed.
 
  
 ##### onclick - before removing listener
@@ -322,7 +322,7 @@ The `addEventListener` works well with the following two handlers.
 * First handler - *calculate*: calculates the result.
 * Second handler - *showResult*: shows the result.
 
-If we use `onclick` in this case, the first handler will be overwritten by the second one, so we will never get the calculated result. 
+If we use `onclick` in this case, the second handler will overwrite the first one, so we will never get the calculated result. 
 
 ```javascript
 let container = document.querySelector('#container');
@@ -382,8 +382,4 @@ addBtn.onclick = showResult;
 
 ### Let's Summarize
 
-Now you can see `onclick` can do almost everything except registering multiple handlers to a single element. However it is good to mention there is a lot of things to consider before selecting the right one for your specific needs. This is just to prove that there are still some cases where we can use `onclick`.
-
-
-
-
+Now you can see `onclick` can do almost everything except registering multiple handlers to a single element. However, it is good to mention that there are many things to consider before selecting the right one for your specific needs. This post is just here to prove that there are still some cases where we can use `onclick`.
