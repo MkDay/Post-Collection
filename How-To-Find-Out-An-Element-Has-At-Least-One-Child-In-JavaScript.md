@@ -148,7 +148,7 @@ To remove existing child elements we can check for them,
 1. including comments and whitespaces.
 2. excluding comments and whitespaces. 
 
-Fortunately, [*NodeList*](https://developer.mozilla.org/en-US/docs/Web/API/NodeList) object considers *comments* and *whitespces* as the parts of it, in the mean time, [*HTMLCollection*](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection) doesn't.
+Fortunately, [*NodeList*](https://developer.mozilla.org/en-US/docs/Web/API/NodeList) object considers *comments* and *whitespces* as the parts of the parent Node, in the mean time, [*HTMLCollection*](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection) doesn't.
 
 #### 1. Check including comments and whitespaces
 
