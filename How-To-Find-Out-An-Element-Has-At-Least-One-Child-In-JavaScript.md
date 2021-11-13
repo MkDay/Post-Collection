@@ -141,7 +141,7 @@ function generateText() {
 ```
 ### Check for child elements : *NodeList* and *HTMLCollection* 
 
-Let's assume, the user choose to enter his *Name* and instantly change his mind and choose to enter his *Age* as the input. In this case if we didn't remove existing `input` then, both the `input` *Name* and *Age* might be appearing on the page.
+Let's assume, the user choose to enter his *Name* and instantly change his mind and choose to enter his *Age* as the input. In this case if we didn't remove existing `input`, then both the `input` *Name* and *Age* might be appearing on the page.
 
 To remove existing child elements we can check for them,
 
@@ -154,7 +154,7 @@ Fortunately, [*NodeList*](https://developer.mozilla.org/en-US/docs/Web/API/NodeL
 
 This is good if we just want to clear out all the children from the parent element using `parent.innerHTML = ''; `.
 
-However, if we use `removeChild()`, `replaceChild()` methods we might get errors like below, when there is no any actual child, other than comments and whitespaces.
+However, if we use `removeChild()` or `replaceChild()` methods we might get errors like below, when there is no any actual child, other than comments and whitespaces.
 
 *Uncaught NotFoundError: Failed to execute 'replaceChild' on 'Node': The node to be replaced is not a child of this node*
 
@@ -280,7 +280,7 @@ function hasChildElements(parent) {
 
 #### 2. Check excluding comments and whitespaces.
 
-Following ways will work with all `innerHTML = ''; `, `removeChild()`, `replaceChild()` & `replaceWith()` methods which mentioned before.
+Following ways will work with all `innerHTML = '';`, `removeChild()`, `replaceChild()` & `replaceWith()` methods which mentioned before.
 
 
  ##### 2.1. Find children using [*childNodes*](https://developer.mozilla.org/en-US/docs/Web/API/Node/childNodes) & [*nodeType*](https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType)
@@ -421,7 +421,7 @@ function hasChildElements(parent) {
 
 Now we have two sets of ways to do our job. However, more importantly, before using any kind of code in your project, it is the best practice to check browser compatibility of it. 
 
-Also there is no *best of all* that mentioning here, you are the one who always qualify to mention your best choice based on your experience. See you in the comment section.
+Also there is no *best of all* that mentioning here, you are the one who always qualify to mention your best choice based on your experience. So see you in the comment section.
 
 Happy Coding!
 
