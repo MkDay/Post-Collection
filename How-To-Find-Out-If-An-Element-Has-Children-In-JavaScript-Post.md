@@ -30,9 +30,7 @@ Also there is a `button` with the `id="btn"`.
 
 In the JavaScript, there is a created *paragraph* element with some text in it. 
 
-When the user click the button, the `function addChildren() {}` will be getting called. It will append a new child element which is the paragraph at the run time, if there is no any existing child element. If there is at least one child, then it won't append the paragraph at all.
-
-To check for the child elements we are going to create another function called `function hasChildElements(parent) {}`
+When the user click the button, the `function addChildren() {}` will be getting called. If there is no any existing child element in the *parent*, the function will append a new child element which is the paragraph to the *parent* at the run time. Otherwise it won't append the paragraph at all.
 
 ```javascript
 
@@ -51,6 +49,7 @@ function addChildren(e) {
 }
 
 ```
+To check for the child elements we are going to create another function called `function hasChildElements(parent) {}`
 
 ### 1. Quicker way to check for children
 
@@ -62,9 +61,9 @@ The [`parent.innerHTML`](https://developer.mozilla.org/en-US/docs/Web/API/Elemen
 
 It returns HTML source of the element as a string if there any.
 
-The following function checks if there any HTML in the parent element including *comments* and *whitespaces* etc. 
+The following function checks if there any HTML in the parent element including *elements*, *comments* and *whitespaces* etc. 
 
-So our function will return true, means the element has children which are *comments* and *whitespaces*.
+So our function returns true, means the element has children which are *comments* and *whitespaces*.
 
 
 ```javascript
@@ -88,13 +87,11 @@ Now we know that when checking for children of an element we must be careful not
 
 ### 2. Comments and whitespaces as children
 
-`#comment` and *whitespace* which belong to `#text` are both considered as *nodes* of the DOM tree.  
+`#comment` and *whitespaces* which belong to `#text` are both considered as *nodes* of the DOM tree.  
 
 So if we use some of the properties or methods that belong to the [**Node**](https://developer.mozilla.org/en-US/docs/Web/API/Node) interface to get the child elements of a parent element, we might get *comment* and *whitespace* as child elements if there any.
 
-In short, we just get the *nodes* of the *DOM* tree instead of getting *elements* specifically.
-
-In short, we get all sorts of *nodes* in the *DOM* tree instead of specifically getting *element*.
+In short, we get all sorts of *nodes* in the *DOM* tree instead of specifically getting *elements*.
 
 Let's see some examples.
 #### 2.1. Find children using *hasChildNodes()*
@@ -187,11 +184,11 @@ However, there is another property called [*nodeType*](https://developer.mozilla
 After checking if there are any types of child nodes, if so, we can extract the specific node type using the *nodeType* property.
 
 We just need to get only, 
-Node.ELEMENT_NODE (1)
+* Node.ELEMENT_NODE (1)
 
 And we want to ignore,
-Node.TEXT_NODE (3)
-Node.COMMENT_NODE (8)
+* Node.TEXT_NODE (3)
+* Node.COMMENT_NODE (8)
 
 Following two examples will show you how to use *nodeType* to get the actual element child nodes.
 
@@ -259,7 +256,7 @@ By using those properties we can only obtain the elements without obtaining othe
 
 #### 4.1 Find children using *firstElementChild* 
 
-The [*firstElementChild*](https://developer.mozilla.org/en-US/docs/Web/API/Element/firstElementChild) gives first child element of the parent element. It only looks for element nodes to grab the first element child. Especially, it does not provide non-element nodes.
+The [*parent.firstElementChild*](https://developer.mozilla.org/en-US/docs/Web/API/Element/firstElementChild) gives first child element of the parent element. It only looks for element nodes to grab the first element child. Especially, it does not provide non-element nodes.
 
 ```javascript
 
@@ -282,7 +279,7 @@ function hasChildElements(parent) {
 
 #### 4.2. Find children using *children.length*
 
-The [*Element.children*](https://developer.mozilla.org/en-US/docs/Web/API/Element/children) includes only element nodes within given element. Here we check for the number of child elements that the parent has, using `length` property.
+The [*parent.children*](https://developer.mozilla.org/en-US/docs/Web/API/Element/children) includes only element nodes in a given element. Here we check for the number of child elements that the parent has, using `length` property.
 
 ```javascript
 
@@ -306,7 +303,7 @@ function hasChildElements(parent) {
 
 #### 4.3. Find children using *childElementCount*
 
-The [*childElementCount*](https://developer.mozilla.org/en-US/docs/Web/API/Element/childElementCount) returns the number of child elements of the given element.
+The [*parent.childElementCount*](https://developer.mozilla.org/en-US/docs/Web/API/Element/childElementCount) returns the number of child elements of the given element.
 
 ```javascript
 
