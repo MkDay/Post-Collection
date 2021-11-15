@@ -386,3 +386,5 @@ addBtn.onclick = showResult;
 ### Let's Summarize
 
 Now you can see `onclick` can do almost everything except registering multiple handlers to a single element. However, it is good to mention that there are many things to consider before selecting the right one for your specific needs. This post is just here to prove that there are still some cases where we can use `onclick`.
+
+*Image Credit: Artem Bryzgalov on Unsplash* 
