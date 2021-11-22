@@ -339,3 +339,6 @@ However, more importantly, before using any line of code in your project, it is 
 Also, you may have something else to add here, so feel free to add them.  It will make this article more useful.
 
 Happy Coding!
+
+**_Image Credit: Tanja Cotoaga on Unsplash_**
+  
