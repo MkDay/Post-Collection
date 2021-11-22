@@ -1,5 +1,7 @@
 # How To Find Out If An Element Has Children In JavaScript
 
+**_Published @DEV 22/11/2021_**
+
   
 If you are still getting familiar with JavaScript [**DOM**](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction), definitely you're going to have this problem, now or later.
 
