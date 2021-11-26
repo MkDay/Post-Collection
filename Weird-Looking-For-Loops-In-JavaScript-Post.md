@@ -274,8 +274,8 @@ console.log(`outside counter = ${i}`); // throws an error
 "inside counter = 2"
 "inside counter = 3"
 "inside counter = 4"
-"inside counter = 5
-"Uncaught ReferenceError: i is not defined 
+"inside counter = 5"
+"Uncaught ReferenceError: i is not defined"
 
 */
 
