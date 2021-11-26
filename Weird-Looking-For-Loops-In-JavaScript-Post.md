@@ -176,9 +176,6 @@ In the example below, we use two separate variables called `i` and `j`.
 * *j* represents *even* numbers between 1 to 5 inclusively.
 
 
-to demonstrate odd and even numbers between 1 to 5 inclusively.
-
-
 ```javascript
 
 for (let i = 1, j = 2; i <= 5, j <= 5; i += 2, j += 2) {
