@@ -1,4 +1,4 @@
-# Weird Looking For-Loops In JavaScript
+# Weird Things About For-Loops In JavaScript
 
 I bet you all use [*for-loop*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) like the below one, at least once in your lifetime.
 
