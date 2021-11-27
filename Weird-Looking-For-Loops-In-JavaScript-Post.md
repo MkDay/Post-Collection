@@ -19,6 +19,12 @@ for (let i = 1; i <= 5; i++) {
 */
 
 ```
+Anyway, instead of this deadly usual, let's talk about some of the rare things that come with *for-loop*.
+
+But first,
+
+### *for-loop* in brief
+
 The `for` loop comes in handy when we want to,
 
 * execute some statements multiple times,
@@ -27,11 +33,11 @@ The `for` loop comes in handy when we want to,
 
 Here is the syntax for the `for` loop.
 
-### Syntax
+#### Syntax
 
 > *for ([initialization]; [condition]; [final-expression]) {*
 > 
->   *//statements*
+>   *// statements*
 >   
 > *}*
 
@@ -45,15 +51,15 @@ Normally what does this do is,
 
 3. **final-expression:** If the condition is true, evaluate the *final-expression*.
 
-4. go back again to check the condition.
+4. repeat the 2nd and 3rd steps until the condition becomes false.
 
-Anyway, instead of this deadly usual, let me show you some of the rare things that come with *for-loop*.
+Now let's play with the rare things.
 
 ### Optional three expressions
 
 By looking at the syntax of the `for` loop, we can see that it has three expressions inside the parentheses. But they all are optional, which means we can leave them as blank as well. 
 
-So let's try to leave all or some of these expressions and see the effect.
+So, let's try to leave all or some of these expressions and see the effect.
 
 
 #### 1. The *for-loop* without *initialization* expression
@@ -110,7 +116,7 @@ for (let i = 1; ; i++) {
 
 ```
 
-#### 3. The *for-loop* without *final-expression* expression 
+#### 3. The *for-loop* without *final-expression*  
 This loop omits the *final expression*. So we have to modify the variable inside the loop body to keep the loop running.
 
 
@@ -132,9 +138,6 @@ for (let i = 1; i <= 5; ) {
 */
 
 ```
-
-
-
 #### 4. The *for-loop* without any expressions
 
 Even we omit all the expressions still have to put two *semi-colons* inside the parentheses to represent all the three expression blocks. Otherwise, it gives us an error. 
@@ -173,7 +176,7 @@ Of cause! Multiple variables are allowed to use inside the parentheses. Using *c
 In the example below, we use two separate variables called `i` and `j`. 
 
 * *i* represents *odd* numbers between 1 to 5 inclusively.
-* *j* represents *even* numbers between 1 to 5 inclusively.
+* *j* represents *even* numbers between 2 to 5 inclusively.
 
 
 ```javascript
@@ -275,7 +278,7 @@ console.log(`outside counter = ${i}`); // throws an error
 "inside counter = 3"
 "inside counter = 4"
 "inside counter = 5"
-"Uncaught ReferenceError: i is not defined"
+"Uncaught ReferenceError: i is not defined 
 
 */
 
@@ -283,7 +286,7 @@ console.log(`outside counter = ${i}`); // throws an error
 
 ### Labeled *for-loop*
 
-Using [label](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label#description), we can [break](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break#description) the *outer loop* within the *inner loop*. Because the `break` statement can be labeled.
+Using [label](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label#description), we can [break](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break#description) the *outer loop* within the *inner loop*, since the `for-loop` can be labeled.
 
 Here is the syntax of the `break` statement:
 
@@ -325,7 +328,7 @@ Here is another rare way to use *for-loop*.
 
 This loop iterates through the parent node by checking whether it has any child element using the [*nodeType*](https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType) of the child node. 
 
-`child.nodeType == 1` means it checks for only the *ELEMENT_NODE*.
+`child.nodeType == 1` means it checks only for the *ELEMENT_NODE*.
 
 If it found a child element then, it gets `textContent` of the child.
 
@@ -348,8 +351,6 @@ If it found a child element then, it gets `textContent` of the child.
 **JavaScript:**
 
 ```javascript
-
-// loop through child nodes in a parent node and get the text content of them.
 
 let parent = document.querySelector("#parent");
 let btn = document.querySelector("#btn");
