@@ -1,5 +1,7 @@
 # Weird Things About For-Loops In JavaScript
 
+**_Published @DEV 29/11/2021_**
+
 I bet you all use [*for-loop*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) like the below one, at least once in your lifetime.
 
 ```javascript
