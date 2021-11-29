@@ -383,3 +383,5 @@ function getText() {
 These are only a few of the rare cases that come with *for-loop*. If you know more, we would like to hear from you. 
 
 **_Happy Coding!_**
+
+**_Image Credit: Alistair MacRobert on Unsplash_** 
