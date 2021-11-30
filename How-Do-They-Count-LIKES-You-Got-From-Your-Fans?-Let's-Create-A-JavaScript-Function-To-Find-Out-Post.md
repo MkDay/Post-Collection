@@ -22,6 +22,7 @@ Also, you can manipulate your *likes count* if you know the following basic Java
 ### 1. Create the HTML 
 
 ```html
+<h2>Let's Manipulate Your Likes-Count</h2>
 
 <h3>Follower List</h3>
 
