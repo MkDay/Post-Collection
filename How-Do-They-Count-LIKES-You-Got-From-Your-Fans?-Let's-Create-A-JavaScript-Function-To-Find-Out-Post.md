@@ -1,4 +1,4 @@
-# How Do They Count LIKES You Got From Your Fans? Let's Create One To Find Out Using JavaScript.
+# How Do They Count LIKES You Got From Your Fans? Let's Create A JavaScript Function To Find Out.
 
 How many times a day do you check your *Likes Count* somewhere on the internet? It's countless, right?
  
