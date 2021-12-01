@@ -211,6 +211,8 @@ function countLikes([first, second, ...others]) {
 
 Now tell us how many likes that you got (or wish to get) from your favourite ones.
 
+{% codepen https://codepen.io/MkDay/pen/yLzLPBr %}
+
 **_Note:_** 
 This post inspired from this codewars problem [*Who likes it?*](https://www.codewars.com/kata/5266876b8f4bf2da9b000362/javascript). And I'd like to thank all the warriors who solved this problem amazingly. All these solution ideas that shown here are inspired from you!
 
