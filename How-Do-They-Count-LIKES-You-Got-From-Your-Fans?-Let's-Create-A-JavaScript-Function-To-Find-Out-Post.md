@@ -218,4 +218,6 @@ This post was inspired by a *codewars* problem called [*Who likes it?*](https://
 
 **_Happy Coding!_**
 
-**_Image Credit:_**
+**_Image Credit: Possessed Photography on Unsplash_**
+
+
