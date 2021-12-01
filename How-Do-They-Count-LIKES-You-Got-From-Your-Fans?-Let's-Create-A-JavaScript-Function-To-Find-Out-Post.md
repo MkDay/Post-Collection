@@ -1,6 +1,6 @@
 # How Do They Count LIKES You Got From Your Fans? Let's Create A JavaScript Function To Find Out.
 
-How many times a day do you check your *Likes Count* somewhere on the internet? It's countless, right?
+How many times a day do you check your *Likes-Count* somewhere on the internet? It's countless, right?.
  
 So what if you have your own *LIKE* button that allows you to manipulate your *likes count*?
 
@@ -59,7 +59,7 @@ Also, you can manipulate your *likes count* if you know the following basic Java
 <p id="show-likes"></p>
 
 ```
-Add your own flavour to it using CSS, it's all up to you.
+Add some flavor to it using CSS. It's all up to you.
 
 ### 2. Give it a life with JavaScript
 
@@ -104,13 +104,13 @@ function countLikes(likes) {
  
 ### 3. Other different ways to count likes
 
-Now you are done! you can play with it as much as you want.
+Now you are done! You can play with it as much as you want.
 
 But wait!
 
-Here, we used `switch-case` statement to count likes. However, there are thousands ways to create your `function countLikes() {}`. 
+Here, we used `switch-case` statement to count likes. However, there are thousands of ways to create your `function countLikes() {}`. 
 
-So let's try some of cool ways to count your likes.
+So let's try some cool ways to count your likes.
 
 #### Method 1: 
 #### Concepts That Used: Object, arrow function and ternary operator
@@ -209,12 +209,12 @@ function countLikes([first, second, ...others]) {
 
 ```
 
-Now tell us how many likes that you got (or wish to get) from your favourite ones.
+Now tell us how many *likes* that you got (or wish to get) from your favorite ones.
 
 {% codepen https://codepen.io/MkDay/pen/yLzLPBr %}
 
 **_Note:_** 
-This post inspired from this codewars problem [*Who likes it?*](https://www.codewars.com/kata/5266876b8f4bf2da9b000362/javascript). And I'd like to thank all the warriors who solved this problem amazingly. All these solution ideas that shown here are inspired from you!
+This post was inspired by a *codewars* problem called [*Who likes it?*](https://www.codewars.com/kata/5266876b8f4bf2da9b000362/javascript). And I'd like to thank all the warriors who solved this problem amazingly. 
 
 **_Happy Coding!_**
 
