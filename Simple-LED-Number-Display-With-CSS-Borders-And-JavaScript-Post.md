@@ -7,13 +7,13 @@ You can think about it in this way.
 
 There are seven red lines made up with a bunch of red LED bulbs and, those lines are arranged like two rectangles that appear one on top of the other.
 
-According to [*Wikipedia*](https://en.m.wikipedia.org/wiki/Seven-segment_display), those seven red lines display introduced as **_Seven-Segment Display_** and, each of them will be visible or invisible depending on the digit that needed to be displayed.
+[*Wikipedia*](https://en.m.wikipedia.org/wiki/Seven-segment_display) refers to it as **_Seven-Segment Display_**.
 
 However, if you want to make one by yourself, you just need to follow these three simple steps. I promise it won't take more than one hour.
 
-**Note:** Here, I don't suppose to create the whole clock itself, but I will show you how to make a *Seven-Segment-Display* and how to make digits (from 0 to 9) as visible or invisible on it.
 
-## Steps you have to follow:
+
+## Steps to create a LED-Number-Display (Seven-Segment-Display)
 
 1. **Step 1. HTML:** Create two rectangles.
 
@@ -26,9 +26,11 @@ So let's follow the steps.
 ### 1. HTML: Create two rectangles
 
 * Create the parent `div`: 
+ 
 `<div id="container">`
 
-* Create the two child `div` inside parent `div`: 
+* Create the two child `div` inside parent `div`:
+  
 `<div id="top-box">` and `<div id="bottom-box">`
 
 Here is the HTML code:
@@ -174,7 +176,7 @@ let bottomBox = document.querySelector('#bottom-box');
 
 ```
 
-* Create two variables to store colors 'red' and 'transparent'.
+* Create two variables to store colors *red* and *transparent*.
 
 **Eg:** ` let on='red' ` and ` let off='transparent' `.
 
@@ -187,10 +189,12 @@ let bottomBox = document.querySelector('#bottom-box');
 * Change the color of each single border using the variables, `on` and `off` to display a specific digit.
 
 **Eg:**
-`topBox.style.borderTopColor = on;` 
-`bottomBox.style.borderTopColor = off;`
+```javascript
+topBox.style.borderTopColor = on;
+bottomBox.style.borderTopColor = off;
+```
 
-* If you want, you can animate those digits repeatedly using `setTimeout ()` and` setInterval ()`.
+* If you want, you can animate those digits repeatedly using `setTimeout()` and `setInterval()`.
 
 Here is the full JavaScript code:
 
