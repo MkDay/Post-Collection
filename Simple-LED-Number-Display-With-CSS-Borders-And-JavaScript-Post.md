@@ -57,7 +57,7 @@ First of all,
 
 And then,
 
-* Create borders for each side of both elements separately.
+* Create borders separately for each side of both elements.
 
 **For the `top-box`:**
 
