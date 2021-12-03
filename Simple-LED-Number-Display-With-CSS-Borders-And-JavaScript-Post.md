@@ -3,7 +3,7 @@
 
 Have you ever wondered how numbers are displayed on a digital clock or a basic calculator?
 
-You can think about it in this way.
+Well, you can think about it in this way.
 
 There are seven red lines made up with a bunch of red LED bulbs and, those lines are arranged like two rectangles that appear one on top of the other.
 
@@ -15,11 +15,11 @@ However, if you want to make one by yourself, you just need to follow these thre
 
 ## Steps to create a LED-Number-Display (Seven-Segment-Display)
 
-1. **Step 1. HTML:** Create two rectangles.
+* **Step 1. HTML:** Create two rectangles.
 
-2. **Step 2. CSS :** Add borders separately for each side of the two rectangles.
+* **Step 2. CSS :** Add borders separately for each side of the two rectangles.
 
-3. **Step 3. JavaScript :** Display digits by changing the border color on each side of the rectangles.
+* **Step 3. JavaScript :** Display digits by changing the border color on each side of the rectangles.
 
 So let's follow the steps.
 
