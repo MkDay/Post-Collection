@@ -1,25 +1,22 @@
 # Simple LED-Number-Display With CSS Borders And JavaScript
- 
 
-Have you ever wondered how numbers are displayed on a digital clock or a basic calculator?
+Have you ever wondered how to display numbers on a digital clock or a basic calculator?
 
 Well, you can think about it in this way.
 
-There are seven red lines made up with a bunch of red LED bulbs and, those lines are arranged like two rectangles that appear one on top of the other.
+There are seven red lines made up of red LED bulbs. And they are arranged like two rectangles. Also, one of the rectangles appears on top of the other.
 
-[*Wikipedia*](https://en.m.wikipedia.org/wiki/Seven-segment_display) refers to it as **_Seven-Segment Display_**.
+[*Wikipedia*](https://en.m.wikipedia.org/wiki/Seven-segment_display) refers to this *LED-Number-Display* as **_Seven-Segment Display_**.
 
-However, if you want to make one by yourself, you just need to follow these three simple steps. I promise it won't take more than one hour.
-
-
+However, if you want to create one, you only need to follow these three simple steps. I promise it won't take more than one hour.
 
 ## Steps to create a LED-Number-Display (Seven-Segment-Display)
 
 * **Step 1. HTML:** Create two rectangles.
 
-* **Step 2. CSS :** Add borders separately for each side of the two rectangles.
+* **Step 2. CSS:** Add borders separately for each side of the two rectangles.
 
-* **Step 3. JavaScript :** Display digits by changing the border color on each side of the rectangles.
+* **Step 3. JavaScript:** Display digits by changing the border color on each side of the rectangles.
 
 So let's follow the steps.
 
@@ -29,7 +26,7 @@ So let's follow the steps.
  
 `<div id="container">`
 
-* Create the two child `div` inside parent `div`:
+* Create the two child-div inside parent `div`:
   
 `<div id="top-box">` and `<div id="bottom-box">`
 
@@ -60,7 +57,7 @@ First of all,
 
 And then,
 
-* Create borders for each side of the both elements separately.
+* Create borders for each side of both elements separately.
 
 **For the `top-box`:**
 
@@ -84,7 +81,7 @@ And then,
 
 ```
 
-Here is the full CSS code:
+Here is the CSS code:
 
 ```css
 
@@ -167,7 +164,7 @@ body {
 ```
 ### 3. JavaScript: Display digits by changing the colors of each border.
 
-* Select the each element.
+* Select elements.
 
 ```javascript
 
@@ -181,12 +178,12 @@ let bottomBox = document.querySelector('#bottom-box');
 **Eg:** ` let on='red' ` and ` let off='transparent' `.
 
 
-* Create 10 functions to display the each digit.
+* Create ten functions to display each digit from 0 to 9.
 
 **Eg:** `let zero = () => {...}` to `let nine = () => {...}`
 
 
-* Change the color of each single border using the variables, `on` and `off` to display a specific digit.
+* Change the border color of both `div` using the variables `on` and `off` to display a specific digit.
 
 **Eg:**
 ```javascript
@@ -196,7 +193,7 @@ bottomBox.style.borderTopColor = off;
 
 * If you want, you can animate those digits repeatedly using `setTimeout()` and `setInterval()`.
 
-Here is the full JavaScript code:
+Here is the JavaScript code:
 
 ```javascript
 
@@ -351,11 +348,8 @@ Here is the *live demo* for the *LED Number Display*.
 
 {% codepen https://codepen.io/MkDay/pen/YzryPwE %}
 
-If you have any ideas to create this in a different way, feel free to mention them below. 
+If you have any ideas to create this differently, feel free to mention them below. 
 
 **_Happy Coding!_**
 
 **_Image Credit:_**
-
-
-
