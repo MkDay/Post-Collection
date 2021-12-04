@@ -87,6 +87,9 @@ Here is the CSS code:
 
 html {
   font-size: 62.5%;
+  color: Navy;
+  text-shadow: 1px 1px 2px #000;
+  font-family: sans-serif;
 }
 
 @media (max-width: 75em) {
@@ -119,6 +122,7 @@ body {
   align-items: center;
   justify-content: space-around;
   padding: 3rem;
+  background: DarkSeaGreen;
 }
 
 #container {
@@ -130,7 +134,8 @@ body {
   width: 550px;
   height: 450px;
   background: #555;
-  border: ridge 8px #fff;
+  border: ridge 8px BurlyWood;
+  box-shadow: 0 0.6rem 0.6rem rgba(0, 0, 0, 0.33);
 }
 
 #top-box {
@@ -201,7 +206,7 @@ let topBox = document.querySelector("#top-box");
 
 let bottomBox = document.querySelector("#bottom-box");
 
-let on = "red";
+let on = "Snow";
 let off = "transparent";
 
 let zero = () => {
