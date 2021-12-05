@@ -131,10 +131,11 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 550px;
-  height: 450px;
+  width: 500px;
+  height: 300px;
   background: #555;
   border: ridge 8px BurlyWood;
+  border-radius: 30px;
   box-shadow: 0 0.6rem 0.6rem rgba(0, 0, 0, 0.33);
 }
 
