@@ -357,4 +357,4 @@ If you have any ideas to create this differently, feel free to mention them belo
 
 **_Happy Coding!_**
 
-**_Image Credit:_**
+**_Image Credit: Chris barker on Flickr_**
