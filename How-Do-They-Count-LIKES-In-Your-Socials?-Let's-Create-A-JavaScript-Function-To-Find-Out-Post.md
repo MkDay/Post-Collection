@@ -1,4 +1,4 @@
-# How Do They Count LIKES Your Socials? Let's Create A JavaScript Function To Find Out.
+# How Do They Count LIKES In Your Socials? Let's Create A JavaScript Function To Find Out.
 
 How many times a day do you check your *Likes-Count* somewhere on the internet? It's countless, right?.
  
