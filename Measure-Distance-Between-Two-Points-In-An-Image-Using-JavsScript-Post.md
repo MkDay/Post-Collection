@@ -294,3 +294,5 @@ So count stars, measure distance and have fun.
 PS: if you really enjoy this article, you can support me at [ko-fi](https://ko-fi.com/mkdaycode). I always appreciate your support, it really encourages me to keep going.
 
 Happy Coding!
+
+**_Image Credit: Nathan Anderson on Unsplash_**
