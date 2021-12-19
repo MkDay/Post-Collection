@@ -283,7 +283,7 @@ This is the live demo @CodePen.
 
 {}
 
-**NOTE:** **_This won't work correctly within the smaller viewports._**
+**NOTE:** **_Since this project is only to practice coding so it might not work correctly within the smaller viewports._**
 
 ### Conclusion
 
