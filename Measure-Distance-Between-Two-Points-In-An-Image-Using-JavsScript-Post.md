@@ -1,15 +1,15 @@
 # Measure Distance Between Two Points In An Image Using JavsScript
  
 
-This is not about complex astronomy, but we all love the sky, right? Also, we like images of stars, nebulae, galaxies etc. 
+It's not about complex astronomy, but we all love the sky, Right? Also, we like images of stars, nebulae, galaxies, etc. 
 
-So that's why I came up with this idea, how about if we can measure the distance (only for fun) between two stars which appear in an image?
+So that's why I came up with this idea: what if we can measure the distance (only for fun) between two stars that appear in an image?
 
-Well, it might not be about the stars in an image but could be anything such as, two cities in the map, we can measure the distance between them with this simple **_beginner-friendly_** project.
+Well, It might not be about the stars in an image but could be anything such as two cities on the map, whichever we can measure the distance between them with this simple **_beginner-friendly_** project.
  
-In my opinion, this is a good project to practice basic knowledge of HTML, CSS and, JavaScript. Most importantly, you don't want to use *HTML canvas* here.
+In my opinion, it is a good idea to use this project to practice basic knowledge of HTML, CSS and, JavaScript. Most importantly, you don't want to use *HTML canvas* here.
 
-Okay, what does this project all about? 
+Okay, what does this project do in the first place? 
  
 There is an image of the *starry night sky* on the page, so the user can measure the distance between two or more stars that appear on the image by clicking on them.
 
@@ -19,8 +19,8 @@ So let's break down this project into smaller parts.
 ### 1. HTML: 
 
 Create `div` elements for, 
-  * image container: `<div id="container">`
-  * result container to display calculated distance: `<div id="results">`
+  * Image container: `<div id="container">`
+  * Result container to display calculated distance: `<div id="results">`
 
 ```html
 
@@ -47,7 +47,7 @@ Create `div` elements for,
  
 ### 2. CSS:
  
-* set our *starry night sky* image as `background-image` of the image container.
+* Set our *starry night sky* image as `background-image` of the image container.
 
 ```css
 
@@ -64,8 +64,8 @@ Create `div` elements for,
 
 ```
 
-* create and style two class selectors `.points` and `.lines` which we're going to create in the JavaScript later.
-* make the `position: absolute;` for the both `.points` and `.lines`.
+* Create and style two class selectors `.points` and `.lines` which we will create later in the JavaScript.
+* Make the `position: absolute;` for the both `.points` and `.lines`.
 
 ```css
 
@@ -85,7 +85,7 @@ Create `div` elements for,
 
 ```
 
-* add additional styling as your taste.
+* Add additional styling as your taste.
 
 
 ### 3. JavaScript:
@@ -140,11 +140,11 @@ container.addEventListener("click", (e) => {
 ```
 #### (3) *createPoints()* function
 
-* create a `for-loop` which runs from 0 to number of clicked points.
-* in each time create a `div` inside the loop.
-* set its `className` as `points`.
-* set left and top coordinates of the `div`. (`e.x` and `e.y`)
-* append it to the `#container`.
+* Create a `for-loop` that runs from 0 to the number of clicked points.
+* Create a `div` in each iteration inside the loop.
+* Set its `className` as `points`.
+* Set left and top coordinates of the `div` (`e.x` and `e.y`)
+* Append it to the `#container`
 
 
 ```javascript
@@ -164,9 +164,9 @@ function createPoints(posX, posY) {
 
 #### (4) *createLines()* function
 
-Okay, we reach to the most complex and most important part in this project. Because some of math are involved here. I don't suppose to be your math teacher, but these are the steps we're going to follow.
+Okay, We reach the more important part of this project. Because here we have to use some math! I don't suppose to be your math teacher, but these are the steps we're going to follow.
 
-* get the distance between the two points.
+* Get the distance between the two points.
 
 ```javascript
 
@@ -174,7 +174,7 @@ Okay, we reach to the most complex and most important part in this project. Beca
 
 ```
 
-* find the middle point of the two points.
+* Find the middle point of the two points.
 
 ```javascript
 
@@ -185,7 +185,7 @@ Okay, we reach to the most complex and most important part in this project. Beca
 
 ```
 
-* draw a horizontal line of that distance across the midpoint.
+* Draw a horizontal line of that distance across the midpoint.
 
 ```javascript
 
@@ -195,7 +195,7 @@ Okay, we reach to the most complex and most important part in this project. Beca
 
 ```
 
-* calculate the angle to rotate it around the middle point to fit it into the actual two points.
+* Calculate the angle to rotate it around the middle point to fit it into the actual two points.
 
 ```javascript
 
@@ -206,7 +206,7 @@ Okay, we reach to the most complex and most important part in this project. Beca
 
 ```
 
-* rotate the line.
+* Rotate the line.
 
 ```javascript
 
@@ -251,11 +251,11 @@ function createLines(x1, y1, x2, y2) {
 
 #### (5) *getDistance()* function
 
-Now we have the distance which is in pixels, so we should convert it to the centimeter. 
+Now we have the distance in pixels, so we should convert it to the centimeter. 
 
 * 1 pixels = 0.0264583333cm
 
-* distance in centimeter = distance in pixels × 0.0264583333
+* Distance in centimeter = distance in pixels × 0.0264583333
 
 ```javascript
 
@@ -279,19 +279,20 @@ function getDistance(distance) {
 
 ```
 
-This is the live demo @CodePen.
+Below is the live demo @CodePen.
 
 {}
 
-**NOTE:** **_Since this project is only to practice coding so it might not work correctly within the smaller viewports._**
+**NOTE:** 
+**_This project described above only can be used for practicing purposes, so it might not cover all the cases which come with real web projects such as, responsiveness, browser compatibility._**
 
 ### Conclusion
 
-Congrats! we're done with the project, now only remains is measure the distance between your favorite stars! 
+Congrats! we have finished with the project and, now only remains is to measure the distance between your favorite stars! 
 
 So count stars, measure distance and have fun.
 
-PS: if you really enjoy this article, you can support me at [ko-fi](https://ko-fi.com/mkdaycode). I always appreciate your support, it really encourages me to keep going.
+PS: if you enjoy this article, you can support me at [ko-fi](https://ko-fi.com/mkdaycode). I always appreciate your support and, it encourages me to keep going.
 
 Happy Coding!
 
