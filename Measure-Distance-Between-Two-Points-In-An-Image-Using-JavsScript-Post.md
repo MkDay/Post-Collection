@@ -1,9 +1,11 @@
 # Measure Distance Between Two Points In An Image Using JavsScript
  
 
-It's not about complex astronomy, but we all love the sky, Right? Also, we like images of stars, nebulae, galaxies, etc. 
+It's not about complex astrophysics, but we all love the sky, Right? Also, we like images of stars, nebulae, galaxies, etc. 
 
 So that's why I came up with this idea: what if we can measure the distance (only for fun) between two stars that appear in an image?
+
+![Measure distance between stars appear in an image](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hgxpg4yw2sadympnfjti.jpg)
 
 Well, It might not be about the stars in an image but could be anything such as two cities on the map, whichever we can measure the distance between them with this simple **_beginner-friendly_** project.
  
@@ -53,10 +55,10 @@ Create `div` elements for,
 
 #container {
  width: 500px;
- height: 600px;
+ height: 400px;
  border: 2px solid BurlyWood;
  
- background-image: url(https://images.unsplash.com/photo-1515651571008-95427bed8e0b?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYzOTQ0NDQ1NA&ixlib=rb-1.2.1&q=85); 
+ background-image: url(https://images.unsplash.com/photo-1629898145005-5f0ff3ee4eed?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYzOTk5NzM3MQ&ixlib=rb-1.2.1&q=85); 
  background-position: center; 
  background-repeat: no-repeat; 
  background-size: cover; 
@@ -281,7 +283,8 @@ function getDistance(distance) {
 
 Below is the live demo @CodePen.
 
-{}
+{% codepen https://codepen.io/MkDay/pen/bGoRrjy %}
+
 
 **NOTE:** 
 **_This project described above only can be used for practicing purposes, so it might not cover all the cases which come with real web projects such as, responsiveness, browser compatibility._**
@@ -296,4 +299,4 @@ PS: if you enjoy this article, you can support me at [ko-fi](https://ko-fi.com/m
 
 Happy Coding!
 
-**_Image Credit: Nathan Anderson on Unsplash_**
+[![image_description](https://cdn.ko-fi.com/cdn/kofi2.png?v=3)](https://ko-fi.com/mkdaycode)
