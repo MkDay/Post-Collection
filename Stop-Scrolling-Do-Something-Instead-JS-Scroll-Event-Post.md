@@ -62,12 +62,12 @@ To fix the above problem, we can set the below line of code in the CSS that will
 
 ```css
 
-// to scroll the page vertically 
+/* to scroll the page vertically */
 body {
  overflow-y: scroll;
 }
 
-// to scroll an element vertically 
+/* to scroll an element vertically */
 #container {
  overflow-y: scroll;
 }
@@ -231,10 +231,6 @@ Here is how the code works.
 * if the user clicks the button, it checks if the user has scrolled the page/ element (so the `scrollTop` won't be zero)
 * if so, it will scroll the page/element back to the top.
 
-**scroll to the center:**
-
-* if the user clicks the button, it always scrolls to the center of the page/ element.
-
 ```javascript
 
  /* ======= The page ======= */
@@ -253,14 +249,6 @@ btn.addEventListener("click", (e) => {
     });
   }
   
-  // scroll to the center
-
-  document.documentElement.scrollTo({
-    top: document.documentElement.scrollHeight / 2,
-    left: 0,
-    behavior: "smooth"
-  });
-
 });
 
 
@@ -281,6 +269,38 @@ btn.addEventListener("click", (e) => {
     });
  }
   
+});
+
+```
+
+**scroll to the center:**
+
+* if the user clicks the button, it always scrolls to the center of the page/ element.
+
+```javascript
+
+ /* ======= The page ======= */
+
+
+btn.addEventListener("click", (e) => {
+  
+  // scroll to the center
+
+  document.documentElement.scrollTo({
+    top: document.documentElement.scrollHeight / 2,
+    left: 0,
+    behavior: "smooth"
+  });
+
+});
+
+
+
+/* ======The 1st container ======== */
+
+ 
+btn.addEventListener("click", (e) => {
+
   
   // scroll to the center
   
@@ -451,9 +471,9 @@ container[0].addEventListener('scroll', (e) => {
 * [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)
 
 
-While you reading through this article you may wonder about some weirdnesses of the above keywords. For instance, we attached the `EventListener` to the `window` but we don't use like `window.scrollHeight` or `window.scrollTop`. 
+While you reading through this article you may wonder about some weirdnesses of the above keywords. For instance, we attached the `EventListener` to the `window` but we don't use something like, `window.scrollHeight` or `window.scrollTop`. 
 
-So then, this is the right section to clear them out. Here is some cases that they have some differences from each other.
+So then, this is the right section to clear them out. Here is some cases where they have some differences from each other.
 
  **(i) Getting the distance that the document is currently scrolled vertically for the window and the Element**
 
@@ -489,7 +509,7 @@ element.scrollTop = 2500;
 
 But to scroll the `window` we cannot use `window.scrollY` since it is a read-only property. 
 
-As an alternative, assume that, we can use `document.body.scrollTop`. However, this even doesn't work. Because the scrollbar that the browser renders for the document belongs to the `<html>` element, NOT to the `<body>` element.
+As an alternative, if we use `document.body.scrollTop`. However, this even doesn't work. Because the scrollbar that the browser renders for the document belongs to the `<html>` element, NOT to the `<body>` element.
 
 ```javascript
 
@@ -519,16 +539,18 @@ At this point `documentElement` comes in to the scene. It returns the `Element` 
 
 **(iv) *window.innerHeight* and *document.documentElement.clientHeight***
 
-(a) window.innerHeight:
+(a) *window.innerHeight*:
 * it returns interior height of the window in pixels.
 * it includes height of the horizontal scrollbar (if present)
 
-(b) document.documentElement.clientHeight:
+(b) *document.documentElement.clientHeight*:
 * it returns visible height of the element.
 * includes padding, height of pseudo elements (if any).
 * doesn't include margins, borders, horizontal scrollbar.
 * a read-only property  (cannot set values to it).
 * returns an integer value.
+
+So it is a good idea to choose `document.documentElement` to get the visible height of the window.
 
 
 **(v) why *window.onscroll* not *document.documentElement.onscroll*?**
