@@ -15,25 +15,25 @@ The followings are the parts we're going to cover in this article:
 2. Check the page/element has a scrollbar.
 3. Detect scrolling event.
 4. Manipulate scrolling event.
-   (4.1) Keep the focus to the bottom of the page/ element everytime.
-   (4.2) Scroll to the top/bottom using *scroll()* and *scrollTo()*
-   (4.3) Scroll the page/element in specific amount at a time using *scrollBy()*
-   (4.4) Align the page/element to the start, center or end using *scrollIntoView()*
+   1. Keep the focus to the bottom of the page/ element everytime.
+   2. Scroll to the top/bottom using *scroll()* and *scrollTo()*
+   3. Scroll the page/element in specific amount at a time using *scrollBy()*
+   4. Align the page/element to the start, center or end using *scrollIntoView()*
 5. Get the scrolling direction.
 6. *window* vs. *documentElement* vs. *Element*
 
 Also, the followings are the concepts that we're going to discuss in breif along with the examples:
 
-(1) scrollHeight
-(2) scrollTop
-(3) clientHeight
-(4) scroll() & scrollTo()
-(5) scrollBy()
-(6) scrollIntoView()
-(7) scrollY
+1. scrollHeight
+2. scrollTop
+3. clientHeight
+4. scroll() & scrollTo()
+5. scrollBy()
+6. scrollIntoView()
+7. scrollY
  
 
-Okay. Here is a brief about the HTML and CSS which we use to demonstrate the effects of the scroll event.
+Okay. Here is a brief about the HTML and CSS which we use to demonstrate the magic of the scroll event.
 
 In the HTML, we have four `<div>` with the same content and, each `<div>` has the same structure as follows. The page and the content of each `<div>` element is long enough to make them scrollable.
 
@@ -198,7 +198,7 @@ Here is the brief of the `Element.scrollTop`.
 
 The two methods that we can use here are `scroll()` & `scrollTo()`. 
 
-**scroll() and scrollTo():**
+**[Element.scroll()](https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll) and [Element.scrollTo()](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTo):**
 * scrolls the document/ element to a particular set of coordinates.
 * both are effectively same.
 
@@ -296,7 +296,7 @@ btn.addEventListener("click", (e) => {
 
 #### (4.3) Scroll the page/element by specific amount at a time using *scrollBy()*
 
-Using the `scrollBy()` method we can scroll the document/ element by specific amount at a time. 
+Using the [scrollBy()](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollBy) method we can scroll the document/ element by specific amount at a time. 
 
 ```
 Syntax:
@@ -342,7 +342,7 @@ btn.addEventListener("click", (e) => {
 
 #### (4.4) Align the page/element to the start, center or end using *scrollIntoView()*
 
-The `scrollIntoView()` method can take two types of parameters and both are optional.
+The [scrollIntoView()](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView) method can take two types of parameters and both are optional.
 
 ```
 Syntax:
@@ -444,19 +444,18 @@ container[0].addEventListener('scroll', (e) => {
 
 ### 6. *window* vs. *documentElement* vs. *Element*
 
-While you reading through this article you may wonder about some weirdnesses of the above keywords. For instance, we attached the `EventListener` to the `window` but we don't use like `window.scrollHeight` or `window.scrollTop`. 
-
-So then, this is the right section to clear them out.
- 
 * [Window](https://developer.mozilla.org/en-US/docs/Web/API/Window)
 
 * [documentElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/documentElement)
 
 * [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)
 
-Here is some cases that they have some differences from each other.
 
- **(i) Getting the distance that the document is currently scrolled vertically for the `window` and the `Element`**
+While you reading through this article you may wonder about some weirdnesses of the above keywords. For instance, we attached the `EventListener` to the `window` but we don't use like `window.scrollHeight` or `window.scrollTop`. 
+
+So then, this is the right section to clear them out. Here is some cases that they have some differences from each other.
+
+ **(i) Getting the distance that the document is currently scrolled vertically for the window and the Element**
 
 To do this, `Window` interface has two properties, one is newer than the other.
    * `pageYOffset` (older)
@@ -464,7 +463,7 @@ To do this, `Window` interface has two properties, one is newer than the other.
 
 In the meantime `Element` has `scrollTop`.
 
-**(ii) `window.onscroll` and `document.body.onscroll`**
+**(ii) *window.onscroll* and *document.body.onscroll***
 
 These two are interchangeable, that means if we do some changes to one of them the other one is also inherits those changes as well.
 
@@ -518,7 +517,7 @@ At this point `documentElement` comes in to the scene. It returns the `Element` 
 
 ```
 
-**(iv) `window.innerHeight` and `document.documentElement.clientHeight`**
+**(iv) *window.innerHeight* and *document.documentElement.clientHeight***
 
 (a) window.innerHeight:
 * it returns interior height of the window in pixels.
@@ -532,7 +531,7 @@ At this point `documentElement` comes in to the scene. It returns the `Element` 
 * returns an integer value.
 
 
-**(v) why `window.onscroll` not `document.documentElement.onscroll`?**
+**(v) why *window.onscroll* not *document.documentElement.onscroll*?**
 
 Another weird thing is we cannot attach `onscroll` event to the `documentElement` despite it inherits the scrollbar. We just have to use `window.onscroll` in this case.
 
