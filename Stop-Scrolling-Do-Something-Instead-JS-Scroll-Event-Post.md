@@ -76,6 +76,8 @@ body {
 
 **Note:** Here we use `overflow-y` for only demonstrate vertical scrolling. And you can learn more about CSS `overflow` [here](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow).
 
+ {% codepen https://codepen.io/MkDay/pen/abLVxao %}
+
 Well, now we are all set to take control of the scroll event. So let's *scroll down* to the JavaScript code.
 
 In the JavaScript we select all the `<div>` elements using their class name and select the `<button>` using its id.
