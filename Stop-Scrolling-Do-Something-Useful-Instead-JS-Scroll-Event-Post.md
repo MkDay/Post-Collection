@@ -511,7 +511,7 @@ element.scrollTop = 2500;
 
 But for the window, we cannot use `window.scrollY` since it is a read-only property. 
 
-As an alternative, if we use `document.body.scrollTop`. However, this even doesn't work. Because the scrollbar that the browser renders for the document belongs to the `<html>` element, NOT to the `<body>` element.
+Also, we cannot use something like *document.body.scrollTop* either. Because the scrollbar that the browser renders for the document belongs to the `<html>` element, NOT to the `<body>` element.
 
 ```javascript
 
