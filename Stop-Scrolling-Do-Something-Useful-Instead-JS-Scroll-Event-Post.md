@@ -567,6 +567,8 @@ So you may feel like scrolling isn't so bad as they say, and yes, you can say th
 
 Happy Coding!
 
+**_Image Credits: Mike Juarez on Unsplash_** 
+
 PS: Thanks for scrolling down so far to the end and, if you enjoyed this article, you can support me [@ko-fi](https://ko-fi.com/mkdaycode). I always appreciate your support. It encourages me to keep going.
 
 [![image_description](https://cdn.ko-fi.com/cdn/kofi2.png?v=3)](https://ko-fi.com/mkdaycode)
