@@ -559,6 +559,24 @@ So it is a good idea to choose `document.documentElement` to get the visible hei
 
 Another weird thing is we cannot attach the `onscroll` event to the `documentElement` even it is inheriting the scrollbar. We have to use `window.onscroll` in this case.
 
+Here is the main takeaway of these three things:
+
+* to get the scrolled distance: 
+   * for the document: `window.scrollX` (or `window.pageXOffset`) & `window.scrollY` (or `window.pageYOffset`) 
+   * for the element: `element.scrollLeft` & `element.scrollTop`
+
+* to set the scroll position:
+   * `document.documentElement.scrollLeft` & `document.documentElement.scrollTop` works.
+   * `window.scrollX` & `window.scrollY` can't be used.
+   * document.body.scrollLeft & document.body.scrollTop can't be used.
+
+
+* `onscroll` event: 
+   * `window.onscroll` and `document.body.onscroll` works.
+   * `window.onscroll` and `document.body.onscroll` are interchangeable.
+   * but document.documentElement.onscroll doesn't work.
+
+
 ### Conclusion
 
 Okay, we reached the end of the article. Now we know a bit about the scroll event and how to manipulate it. 
