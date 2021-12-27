@@ -1,4 +1,4 @@
-# Stop Scrolling, Do Something Instead - JS Scroll Event
+# Stop Scrolling, Do Something Else Instead - JS Scroll Event
  
 
 You've probably scrolled down all the way through your DEV feed, found this article, stopped and immediately realised you were scrolling for a while without even thinking about it. Right?
