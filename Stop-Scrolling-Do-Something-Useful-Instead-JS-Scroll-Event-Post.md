@@ -1,28 +1,28 @@
-# Stop Scrolling, Do Something Else Instead - JS Scroll Event
+# Stop Scrolling, Do Something Useful Instead - JS Scroll Event
  
 
-You've probably scrolled down all the way through your DEV feed, found this article, stopped and immediately realised you were scrolling for a while without even thinking about it. Right?
+You've probably scrolled down through your DEV feed, found this article, stopped and, immediately realized you were scrolling for a while without even thinking about it. Right?
 
 So welcome here then!
 
-We're not here to fight upon **_scrolling all day is a good or bad habit_** but, as developers it is our job to provide a good experience with scrolling itself. Because there is no doubt it is one of the main part of the web.
+We're not here to fight upon **_scrolling all day is a good or bad habit_** but, as developers, it is our job to provide a good experience with scrolling itself. Also, it is crucial when it comes to user experience.
 
-So let's scrolled down to the topic.
+So let's scroll down to the topic.
 
 The followings are the parts we're going to cover in this article:
 
 1. Set scrolling.
 2. Check the page/element has a scrollbar.
-3. Detect scrolling event.
+3. Detect the scrolling event.
 4. Manipulate scrolling event.
-   1. Keep the focus to the bottom of the page/ element everytime.
+   1. Keep the focus to the bottom of the page/ element every time.
    2. Scroll to the top/bottom using *scroll()* and *scrollTo()*
-   3. Scroll the page/element in specific amount at a time using *scrollBy()*
-   4. Align the page/element to the start, center or end using *scrollIntoView()*
+   3. Scroll the page/element in a specific amount at a time using *scrollBy()*
+   4. Align the page/element to the start, center, or end using *scrollIntoView()*
 5. Get the scrolling direction.
 6. *window* vs. *documentElement* vs. *Element*
 
-Also, the followings are the concepts that we're going to discuss in breif along with the examples:
+Also, the followings are the concepts that we're going to discuss along with the examples in brief:
 
 1. scrollHeight
 2. scrollTop
@@ -33,9 +33,9 @@ Also, the followings are the concepts that we're going to discuss in breif along
 7. scrollY
  
 
-Okay. Here is a brief about the HTML and CSS which we use to demonstrate the magic of the scroll event.
+Okay. Here is a brief about the HTML and CSS we use to demonstrate the magic of the scroll event.
 
-In the HTML, we have four `<div>` with the same content and, each `<div>` has the same structure as follows. The page and the content of each `<div>` element is long enough to make them scrollable.
+In the HTML, we have four `<div>` with the same content and, each `<div>` has the same structure as follows. The page and the contents of each `<div>` are long enough to make them scrollable.
 
 ```html
 
@@ -43,7 +43,7 @@ In the HTML, we have four `<div>` with the same content and, each `<div>` has th
   
   <div class="content">
    
-   ... Some long dummy paragraphs
+   Some long dummy paragraphs
 
   </div>
 </div> 
@@ -51,14 +51,14 @@ In the HTML, we have four `<div>` with the same content and, each `<div>` has th
 ```
 
 
-Also, there's a `<button id="btn">` to manipulate some scroll events that we're going to discuss later.
+Also, there's a `<button id="btn">` to manipulate some scroll events that we will discuss later.
 
-In the CSS, when we specify some `width` and `height` you can see that the contents of each `<div>` are not fit in their containers. 
+In the CSS, when we specify some `width` and `height` for `<div>` elements, you can see that the contents of each `<div>` are not fit in their containers. 
 
 
 ### 1. Set Scrolling
 
-To fix the above problem, we can set the below line of code in the CSS that will get all the content into its container and will allow the user to scroll down to see overflowed content.
+To fix the above problem, we can set the below line of code in the CSS. It will get all the content into its container and allow the user to scroll down to see overflowed content.
 
 ```css
 
@@ -74,13 +74,13 @@ body {
 
 ```
 
-**Note:** Here we use `overflow-y` for only demonstrate vertical scrolling. And you can learn more about CSS `overflow` [here](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow).
+**Note:** Here, we use `overflow-y` to demonstrate only the vertical scrolling. And you can learn more about CSS `overflow` [here](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow).
 
  {% codepen https://codepen.io/MkDay/pen/abLVxao %}
 
 Well, now we are all set to take control of the scroll event. So let's *scroll down* to the JavaScript code.
 
-In the JavaScript we select all the `<div>` elements using their class name and select the `<button>` using its id.
+In JavaScript, we select all the `<div>` elements using their class name and select the `<button>` using its id.
 
 
 ```javascript
@@ -91,14 +91,14 @@ const btn = document.querySelector("#btn");
 ```
 ### 2. Check the page/element has a scrollbar
 
-As we have already seen, there is a scrollbar that appears in the browser window and in each `<div>`.
+As we have seen, the scrollbar already appears in the browser window and each `<div>` element.
 
 Also, we can prove it in our code using the following two properties as well.
 
 **1) [Element.scrollHeight](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollHeight):**
 
-* which gives the full height of the element (visible + overflowed content of the element).
-* includes padding, height of pseudo elements (if any).
+* it gives the full height of an element (visible height + height of the overflowed content) 
+* includes padding, height of pseudo-elements (if any).
 * doesn't include margins, borders, horizontal scrollbar.
 * a read-only property (cannot set values to it). 
 * returns an integer value.
@@ -106,8 +106,8 @@ Also, we can prove it in our code using the following two properties as well.
 
 **2) [Element.clientHeight](https://developer.mozilla.org/en-US/docs/Web/API/Element/clientHeight):** 
 
-* which gives the visible height of the element.
-* includes padding, height of pseudo elements (if any).
+* which gives the visible height of an element.
+* includes padding, height of pseudo-elements (if any).
 * doesn't include margins, borders, horizontal scrollbar.
 * a read-only property  (cannot set values to it).
 * returns an integer value.
@@ -138,9 +138,9 @@ btn.addEventListener("click", (e) => {
 });
 
 ```
-### 3. Detect scrolling event 
+### 3. Detect the scrolling event 
 
-By attaching an *EventListener* to the page/ element we can detect scroll event like below.
+Attaching an *EventListener* to the page/ element we can detect the scroll event like below.
 
 ```javascript
 
@@ -160,13 +160,13 @@ container[0].addEventListener('scroll', (e) => {
 ```
 ### 4. Manipulate scrolling event
 
-Now we know how to check if the page/ element has a scrollbar and how to detect scroll event using `EventListener`. 
+Now we know how to check if the page/ element has a scrollbar and, we know how to detect the scroll event using `EventListener`.
 
 But that isn't the end of the world. We can manipulate it as well. Let's see how.
 
-#### (4.1) Keep the focus to the bottom of the page/ element everytime
+#### (4.1) Keep the focus to the bottom of the page/ element every time
 
-We can always display the bottom of the page/element even when we add new content to the page/ element dynamically using the following method.
+We can always display the bottom of the page/element even when adding new content to the page/ element dynamically using the following method.
 
 `Element.scrollTop = Element.scrollHeight`
 
@@ -190,10 +190,10 @@ Here is the brief of the `Element.scrollTop`.
 
 **[Element.scrollTop](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTop):**
 
-* it gives number of pixels that the element's content is scrolled vertically.
+* it gives the number of pixels that the content of an element has scrolled vertically.
 * Element.scrollTop = distance between element's top and top of the visible content. 
 * if there's no vertical scrollbar, *Element.scrollTop = 0*.
-* it could be a value from 0 to maximum of the element's height inclusively.
+* it could be a value from 0 to maximum of an element's height inclusively.
 
 
 #### (4.2) Scroll to the top/bottom/center using *scroll()* or *scrollTo()*
@@ -215,16 +215,16 @@ Element.scrollTo(options)
 
 ```
 
-* `x-coord`: the pixel along the X axis of the document/ element that you want displayed in the upper-left.
-* `y-coord`: the pixel along the Y axis of the document/ element that you want displayed in the upper-left.
+* `x-coord`: the pixel along the X-axis of the document/ element you want to display in the upper-left.
+* `y-coord`: the pixel along the Y-axis of the document/ element you want to display in the upper-left.
 * options:
-   * `top`: number of pixels to scroll along the Y axis.
-   * `left`: number of pixels to scroll along the X axis.
+   * `top`: number of pixels to scroll along the Y-axis.
+   * `left`: number of pixels to scroll along the X-axis.
    * `behavior`: smooth/ auto/ instant
 
-The code below demonstrates how to manipulate scroll event using the `scrollTo()` method.
+The code below demonstrates the way of `scrollTo()` method works.
 
-In this case we only talk about how to scroll to the top and center.
+In this case, we talk about only how to scroll to the top and center.
 
 Here is how the code works.
 
@@ -277,7 +277,7 @@ btn.addEventListener("click", (e) => {
 
 **scroll to the center:**
 
-* if the user clicks the button, it always scrolls to the center of the page/ element.
+* if the user clicks the button, it scrolls to the center of the page/ element.
 
 ```javascript
 
@@ -331,12 +331,11 @@ Element.scrollBy(options)
 * `x-coord`: pixel value you want to scroll by horizontally.
 * `y-coord`: pixel value you want to scroll by vertically.
 * options:
-   * `top`: number of pixels along the Y axis to scroll by.
-   * `left`: number of pixels along the X axis to scroll by.
+   * `top`: number of pixels along the Y-axis to scroll by.
+   * `left`: number of pixels along the X-axis to scroll by.
    * `behavior`: smooth/ auto/ instant.
 
-
-In the following code, the document/ element will be scrolled down by 100px at a time when the button is clicked.
+The following code shows how to scroll down the document/ element by 100px each time the user clicks the button.
 
 ```javascript
 
@@ -364,7 +363,7 @@ btn.addEventListener("click", (e) => {
 
 #### (4.4) Align the page/element to the start, center or end using *scrollIntoView()*
 
-The [scrollIntoView()](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView) method can take two types of parameters and both are optional.
+The [scrollIntoView()](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView) method can take two types of parameters and, both are optional.
 
 ```
 Syntax:
@@ -382,8 +381,8 @@ Element.scrollIntoView(scrollIntoViewOptions); // Object parameter
 
 It's a boolean value.
 
-* if `true`, the top of the element will be aligned to the top of the visible area of the scrollable ancestor (Default)
-* if `false`, the bottom of the element will be aligned to the bottom of the visible area of the scrollable acestor.
+* if `true`: the top of an element will be aligned to the top of the visible area of the scrollable ancestor (Default).
+* if `false`: the bottom of an element will be aligned to the bottom of the visible area of the scrollable ancestor.
  
 **scrollIntoViewOptions:** 
 
@@ -425,10 +424,11 @@ btn.addEventListener('click', (e) => {
 ### 5. Get the scrolling direction
 
 Here, we get the direction of the page/ element that the user is scrolling.
+ 
+We have a variable called `prevScrollY` to store the number of pixels that the user previously scrolled the page/ element vertically.
 
-The variable `prevScrollY` store the previous number of pixels that the page/ element was scrolled vertically.
-
-If the current number of pixels is greater than the previous number of pixels then the page/ element has scrolled downward. Otherwise upwards.
+*If (the current number of pixels > the previous number of pixels) 
+Then the page/ element has scrolled downward. Otherwise upwards.*
 
 
 ```javascript
@@ -473,21 +473,21 @@ container[0].addEventListener('scroll', (e) => {
 * [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)
 
 
-While you reading through this article you may wonder about some weirdnesses of the above keywords. For instance, we attached the `EventListener` to the `window` but we don't use something like, `window.scrollHeight` or `window.scrollTop`. 
+While reading this article, you may wonder about some weirdnesses of the above keywords. For instance, we attached the `EventListener` to the `window` but, we don't use something like `window.scrollHeight` or `window.scrollTop`. 
 
-So then, this is the right section to clear them out. Here is some cases where they have some differences from each other.
+So then, this is the right section to clear them out. Here are some cases where they have some differences from each other.
 
- **(i) Getting the distance that the document is currently scrolled vertically for the window and the Element**
+ **(i) Getting the distance that the document is currently scrolled vertically for the window and the element**
 
-To do this, `Window` interface has two properties, one is newer than the other.
+In this case, the `Window` interface has two properties and, both give the distance that the `window` has scrolled. One is newer than the other.
    * `pageYOffset` (older)
    * `scrollY` (newer)
 
-In the meantime `Element` has `scrollTop`.
+In the meantime, `Element` has `scrollTop` to do the job.
 
 **(ii) *window.onscroll* and *document.body.onscroll***
 
-These two are interchangeable, that means if we do some changes to one of them the other one is also inherits those changes as well.
+These two are interchangeable, which means if one of them gets changed, the other one inherits those changes as well.
 
 ```javascript
 
@@ -509,7 +509,7 @@ element.scrollTop = 2500;
 
 ```
 
-But to scroll the `window` we cannot use `window.scrollY` since it is a read-only property. 
+But for the window, we cannot use `window.scrollY` since it is a read-only property. 
 
 As an alternative, if we use `document.body.scrollTop`. However, this even doesn't work. Because the scrollbar that the browser renders for the document belongs to the `<html>` element, NOT to the `<body>` element.
 
@@ -525,11 +525,11 @@ window.addEventListener('load', () => {
 
 ```
 
-At this point `documentElement` comes in to the scene. It returns the `Element` that is the root element of the document in this case it is `<html>` element.
+At this point, `documentElement` comes into the scene. It returns the root element of the document. In this case, it is `<html>` element.
 
 ```javascript
 
-// right way to manipulate scroll event for the window
+// correct way to manipulate scroll event for the window
 
  window.addEventListener('load', () => {
   
@@ -557,15 +557,16 @@ So it is a good idea to choose `document.documentElement` to get the visible hei
 
 **(v) why *window.onscroll* not *document.documentElement.onscroll*?**
 
-Another weird thing is we cannot attach `onscroll` event to the `documentElement` despite it inherits the scrollbar. We just have to use `window.onscroll` in this case.
+Another weird thing is we cannot attach the `onscroll` event to the `documentElement` even it is inheriting the scrollbar. We have to use `window.onscroll` in this case.
 
 ### Conclusion
 
-Okay, we reached the end of the article. Now we know bit about scroll event and how to manipulate it. So you may feel like it isn't bad as they say, and yes, it is one of the smartest features that the web makes awsome.
+Okay, we reached the end of the article. Now we know a bit about the scroll event and how to manipulate it. 
+
+So you may feel like scrolling isn't so bad as they say, and yes, you can say that it is the smartest feature that makes the web awesome.
 
 Happy Coding!
 
-PS: Thanks for scrolling down so far to the end and, if you feel you really enjoyed this article, you can support me [@ko-fi](https://ko-fi.com/mkdaycode). I always appreciate your support, it really encourages me to keep going.
+PS: Thanks for scrolling down so far to the end and, if you enjoyed this article, you can support me [@ko-fi](https://ko-fi.com/mkdaycode). I always appreciate your support. It encourages me to keep going.
 
 [![image_description](https://cdn.ko-fi.com/cdn/kofi2.png?v=3)](https://ko-fi.com/mkdaycode)
-
