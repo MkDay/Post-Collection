@@ -359,10 +359,10 @@ btn.onclick = returnFalseSubmitCustom(event, 12);
 </div>
 
 ```
-
+```
  /* output : for link 
-○ doesn't execute until press link
-○ after pressing the link executed but redirected
+ * doesn't execute until press link
+ * after pressing the link executed but redirected
 
 24
 
@@ -377,6 +377,8 @@ btn.onclick = returnFalseSubmitCustom(event, 12);
 "Default behavior is prevented"
 
 */
+ 
+ ```
 
 ### 5. Working ways for custom callbacks 
 
