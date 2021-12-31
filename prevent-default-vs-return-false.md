@@ -1,11 +1,16 @@
 # JavaScript preventDefault - Does it work the way its name suggests? 
 
-Often, almost everyone don't like to use **_default behaviors_** which are provided by default on the web (or even maybe in every case in this world). They all need the web as much as flexible and customizable more than ever. So, as a developer, you're going to have much hard time working on it. 
+Often, almost everyone don't like to use **_default behaviors_** which are provided by default on the web (or even maybe in every case in this world). For instance, as users we have our own preferences about the color or font-size of the text, themes of a web page (eg: dark or light theme), in the meantime, as developers we like or need to do different things with some events, such as, navigating through a link, submitting forms, etc. 
+
+It seems in both cases, we all need the web as much as flexible and customizable more than ever. As a developer, you're going to have much hard time working on it! 
 
 
 So, no one on the web needs default, means they needs to prevent from default. That's where the JavaScript [Event.preventDefault()]() comes in to the play.
 
+Okay then, let's *prevent* from wasting extra time and dive into the topic. 
+
 At this point, you may be wondering about these two words [*Event*](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events) and [*.preventDefault()*](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault) in the JavaScript at the first place.
+
 
 In brief, *Events* are...
 
