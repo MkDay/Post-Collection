@@ -129,7 +129,7 @@ btn.onclick = preventSubmit;
 
 ```
 
-/* ================================================ */
+/* ================== extra-start ============================== */
 
 **Is it same the both preventDefault() & return false (no jquery)**
 
@@ -217,7 +217,7 @@ btn.onclick = returnFalseSubmit; // working
 **there are 2 not working results in the code examples so explain why is it.**
 
 
-/* ================================================ */
+/* ================== extra-end ============================== */
 
 
 ### How about callback functions with custom parameters?
@@ -427,7 +427,7 @@ btn.onclick = returnFalseSubmitCustom(event, 12);
  
  ```
 
-### 3. Working ways for callbacks functions with custom parameters
+### 3. Working ways for callback functions with custom parameters
 
 **Method 1:** 
 
