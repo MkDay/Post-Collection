@@ -1,6 +1,32 @@
-### What is it?
+# JavaScript preventDefault - Does it work the way its name suggests? 
 
-### What to consider before using
+Often, almost everyone don't like to use **_default behaviors_** which are provided by default on the web (or even maybe in every case in this world). They all need the web as much as flexible and customizable more than ever. So, as a developer, you're going to have much hard time working on it. 
+
+
+So, no one on the web needs default, means they needs to prevent from default. That's where the JavaScript [Event.preventDefault()]() comes in to the play.
+
+At this point, you may be wondering about these two words [*Event*](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events) and [*.preventDefault()*](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault) in the JavaScript at the first place.
+
+In brief, *Events* are...
+
+And preventDefault() is... 
+
+
+
+
+So, here is the summary we're going to discuss in this article.
+
+* What to consider before using *Event.preventDefault()*.
+* Where does we cannot use it.
+* Real-world usage.
+* How about callback functions with custom parameters?
+  1. use of *preventDefault()*
+  2. use of *return false*
+  3. working ways for callback functions with custom parameters 
+
+### What to consider before using *Event.preventDefault()*.
+
+Okay, now you may think you can prevent from everything that you want using this method. If so you're wrong. 
 
   * target the right event (eg: &keyup event doesn't& stop typing)
 
@@ -9,11 +35,22 @@
   * it doesn't stop the event propagation
 
 
-### Where does we cannot use it? (eg: scroll event, wheel event)
+
+
+### Where does we cannot use it? 
+
+(eg: scroll event, wheel event)
+
+
 
 ### Real-world usage
 
-### 1. using preventDefault()
+* stop navigating through a link
+* submitting forms
+
+
+
+/*========= ### 1. using preventDefault() ========== */
 
 
 ```javascript
@@ -92,6 +129,7 @@ btn.onclick = preventSubmit;
 
 ```
 
+/* ================================================ */
 
 **Is it same the both preventDefault() & return false (no jquery)**
 
@@ -177,7 +215,16 @@ btn.onclick = returnFalseSubmit; // working
 
 
 **there are 2 not working results in the code examples so explain why is it.**
-### 3. Use of custom callback functions - preventDefault()
+
+
+/* ================================================ */
+
+
+### How about callback functions with custom parameters?
+
+
+
+### 1. Use of *preventDefault()*
 
 ```javascript
 
@@ -256,7 +303,7 @@ Uncaught TypeError: Cannot read property 'preventDefault' of undefined
 ```
 
 
-### 4. Use of custom callback functions - return false
+### 2. Use of *return false*
 
 ```javascript
 
@@ -380,7 +427,7 @@ btn.onclick = returnFalseSubmitCustom(event, 12);
  
  ```
 
-### 5. Working ways for custom callbacks 
+### 3. Working ways for callbacks functions with custom parameters
 
 **Method 1:** 
 
@@ -564,4 +611,3 @@ HTML:
 "Default submit behavior is prevented"
 */
 ```
-
