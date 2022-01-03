@@ -312,14 +312,11 @@ btn.addEventListener('click', preventSubmit);
 
 ```
  
-In the code above, we attach `Event.preventDefault()` to the *submit button*. So it stops submitting form if the checkbox is unchecked. But, it doesn't stop changing the `border-color` of the `form` into red. It seems, the code executes the `.preventDefault()` at first and, bubbling up to the parent element (in this case, `form`) and executes its event if there is any. In the simple word, `preventDefault()` cannot stop *event propagation* even it is a default behavior of an event.
+In the code above, we attach `Event.preventDefault()` to the *submit button*. So it stops submitting form if the checkbox is unchecked. But, it doesn't stop changing the `border-color` of the `form` into red. It seems, the code executes the `.preventDefault()` at first and, bubbling up to the parent element (in this case, `form`) and executes its event if there is any. 
+
+In the simple word, `preventDefault()` cannot stop *event propagation* even it is a default behavior of an event.
 
 If our requirement is only to stop the event propagation we can use [Event.stopPropagation()](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) instead using `.preventDefault()`
-
-
-
-
-### 3. To create callback functions with custom parameters
 
 Now at this point we know bit about things that the `.preventDefault()` method can do or cannot do. 
 
@@ -330,11 +327,13 @@ For instance,
 * callback function of the event listener only have a single parameter which is an object based on Event that has occured.
 * Also, it returns nothing. If there is some return value, it will be ignored.
 
-Well, the answer is, you cannot customize both behaviors using `.preventDefault()` unless you tend to use inline `onclick`. 
+Well, the answer is, you cannot customize both behaviors using `Event.preventDefault()` unless you tend to use inline `onclick`. 
 
 Let's see it in practically. 
 
-### (1) callbacks - custom parameters
+
+### 3. To create callback functions with custom parameters
+
 
 ```javascript
 
