@@ -25,11 +25,6 @@ And preventDefault() is...
 
 Now you may think you can use it to prevent from everything in this world that you want. Actually, you couldn't. 
 
-<!--
-For instance, most commonly you cannot use it to stop event propagation. Also, if you suppose to create callback functions with custom parameters you have no luck with this `Event.preventDefault()` method. 
-
-*eg:* `btn.addEventListener("click", preventSubmitCustom(event, 12));` this is definitely not going to work.
--->
 
 To realize *why* let's break it down to the following parts,
 
@@ -42,7 +37,7 @@ To realize *why* let's break it down to the following parts,
   * to customize callback functions
      1. customize parameters of callbacks
      1. customize return value of callbacks
-* Where does it become a headache - How to prevent the system by checking for *preventDefault()* while executing heavy JavaScript.
+* Where does it become a headache - How to prevent the system by checking for *preventDefault()* while executing heavy JavaScript - *passive: true/false*.
 
 
 ### Real-world usage - where we can use *Event.preventDefault()*.
@@ -692,7 +687,7 @@ You will get this result for all the above methods,
 
 ```
 
-#### 3.1. Customize return value of callbacks
+#### 3.2. Customize return value of callbacks
 
 As shown above, we cannot modify number of parameters or type of parameters using `.preventDefault()` unless we use inline onclick to handle the click event. Now let's check whether it can modify at least the return value that it inherits by default.
 
@@ -729,10 +724,12 @@ However, you can still use inline onclick to handle the click event. In this way
 
 <input id="submit-btn" type="submit" value="Submit" onclick="console.log(typeof preventSubmitCustom(event));">
 
+<!--output: "boolean"-->
+
 ```
 
 
-### 4. Passive true/false
+### 4. Where does it become a headache - How to prevent the system by checking for *preventDefault()* while executing heavy JavaScript - *passive true/false*
 
 
 ```javascript
