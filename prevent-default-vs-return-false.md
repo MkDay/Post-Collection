@@ -330,7 +330,7 @@ Okay, how about customizing stuff like number of parameters, types of parameters
 
 For instance,
 
-* callback function of the event listener only have a single parameter which is an object based on Event that has occured.
+* callback function of the event listener only have a single parameter which is an object based on Event that has occurred.
 * Also, it returns nothing. If there is some return value, it will be ignored.
 
 So, what if we need more parameters or another type of parameter instead an object based on Event?
@@ -346,7 +346,9 @@ Let's see it in practically.
 
 **(1) Not working ways - callbacks with custom parameters:**
 
-Normally, if we use callback functions followed by parentheses, it will be immediately invoked even without the event is occurred. So we cannot use parentheses means we cannot have custom parameters instead its default one.
+Normally, if we use callback functions followed by parentheses, it will be immediately invoked even without the event has occurred. So we cannot use parentheses means we cannot have custom parameters instead its default one.
+
+The code below will never work as we expected.
 
 ```javascript
 
@@ -429,9 +431,11 @@ Uncaught TypeError: Cannot read property 'preventDefault' of undefined
 
 **Working ways - callbacks with custom parameters:**
 
-Here are some of the working ways when using callback functions with custom parameters.
+However, there are some alternatives to customize parameters of the callback functions.
 
 In every method we only use inline onclick to handle the *click* event.
+
+**_Note:_** *it is not recommended to use inline-onclick attribute to handle an event as a good practice.*
 
 **Method 1:** 
 
@@ -690,15 +694,15 @@ You will get this result for all the above methods,
 
 #### 3.1. Customize return value of callbacks
 
-As shown above, we cannot modify number of parameters or type of parameters using `.preventDefault()` unless we use inline onclick to handle the click event. Now let's check whether it can modify at least the return value that inherits by default.
+As shown above, we cannot modify number of parameters or type of parameters using `.preventDefault()` unless we use inline onclick to handle the click event. Now let's check whether it can modify at least the return value that it inherits by default.
 
-
+By default, the callback function returns nothing, if there is some return value, it will be ignored.
 
 ```javascript
 
 /* no error and no effect by adding return value even using preventDefault() within the callback function */
 
-function preventSubmit(e) {
+function preventSubmitCustom(e) {
   if (!checkbox.checked) {
     e.preventDefault();
 
@@ -711,11 +715,11 @@ function preventSubmit(e) {
   return true;
 }
 
-btn.addEventListener('click', preventSubmit); 
+btn.addEventListener('click', preventSubmitCustom); 
 
 ```
 
-This code makes no sense and no effect when it adds to an event listener since by default, the listener (callback function) ignores its return values if there is any. So it seems our `.preventDefault()` cannot stop that default behavior too.
+This code makes no sense and no effect when it adds to an event listener. So it seems our `.preventDefault()` cannot stop that default behavior too.
 
 However, you can still use inline onclick to handle the click event. In this way it will work.
 
@@ -723,7 +727,7 @@ However, you can still use inline onclick to handle the click event. In this way
 
 <!-- check the return type using typeof keyword -->
 
-<input id="submit-btn" type="submit" value="Submit" onclick="console.log(typeof preventSubmit(event));">
+<input id="submit-btn" type="submit" value="Submit" onclick="console.log(typeof preventSubmitCustom(event));">
 
 ```
 
