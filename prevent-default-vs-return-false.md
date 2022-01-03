@@ -53,9 +53,9 @@ And here are some more real-world use cases for the `.preventDefault()`
 * to prevent the user from navigating through a link (anchor element with some URL to another page) after clicking on it.
 * to prevent the user from copying content from a web page, etc.   
 
-Now let's see some examples to understand how it works. For instance the following code shows you how to prevent the user,
-* from navigating through a link 
-* from submitting a form.
+Now let's see some examples to understand how it works. For instance the following code shows you how to prevent the user from,
+* navigating through a link 
+* submitting a form.
 
 In our main HTML code has the following important elements.
 * `<a>` element with a URL.
@@ -286,7 +286,7 @@ btn.addEventListener('click', preventSubmit);
 
 ```
  
-In the code above, we attach `Event.preventDefault()` to the *submit button*. So it stops submitting form if the checkbox is unchecked. But, it doesn't stop changing the `border-color` of the `form` into red. It seems, the code executes the `.preventDefault()` at first and, bubbling up to the parent element (in this case, `form`) and executes its event if there is any. In the 
+In the code above, we attach `Event.preventDefault()` to the *submit button*. So it stops submitting form if the checkbox is unchecked. But, it doesn't stop changing the `border-color` of the `form` into red. It seems, the code executes the `.preventDefault()` at first and, bubbling up to the parent element (in this case, `form`) and executes its event if there is any. In the simple word, `preventDefault()` cannot stop *event propagation* even it is a default behavior of an event.
 
 If our requirement is only to stop the event propagation we can use [Event.stopPropagation()](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) instead using `.preventDefault()`
 
