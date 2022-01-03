@@ -747,7 +747,7 @@ The *passive* is one of available option.
 
 > **passive:** *boolean value that, if true, indicates that the function specified by listener will never call preventDefault(). If a passive listener does call preventDefault(), the user agent will do nothing other than generate a console warning.* **- MDN**
 
-This is more useful with touch events on mobile browsers. For example, let's suppose, we use the `preventDefault()` within `touchstart` event. In the most time, between two `touchstart` events will have very short intervals. In each time the event has occurred the browser will check whether there is `Event.preventDefault()`
+This is more useful with touch events on mobile browsers. For example, let's suppose, we use the `preventDefault()` within `touchstart` event. In the most time, between two `touchstart` events will have very short intervals. In each time the event has occurred the browser will check whether there is an `Event.preventDefault()` method that is called within the callback function. It will happen 
 
 ```javascript
 
