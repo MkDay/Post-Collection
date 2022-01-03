@@ -37,9 +37,9 @@ To realize *why* let's break it down to the following parts,
 * Where does we cannot use it and some alternatives for the *Event.preventDefault()*.
   * with events that couldn't be canceled
   * to stop event propagation
-  * callback functions with custom parameters
-  * callback functions with return values
-* Where it becomes a headache - How to prevent the system by checking for *preventDefault()* while executing heavy JavaScript.
+  * to create callback functions with custom parameters
+  * to create callback functions with return values
+* Where does it become a headache - How to prevent the system by checking for *preventDefault()* while executing heavy JavaScript.
 
 
 ### Real-world usage - where we can use *Event.preventDefault()*.
@@ -59,10 +59,10 @@ Now let's see some examples to understand how it works. For instance the followi
 
 In our main HTML code has the following important elements.
 * `<a>` element with a URL.
-* <form id="form-submission"> element with three types of input elements as its children.
-   * <input type="text" id="input-text">
-   * <input type="checkbox" id="agreement-checkbox">
-   * <input type="submit" id="submit-btn">
+* `<form id="form-submission">` element with three types of input elements as its children.
+   * `<input type="text" id="input-text">`
+   * `<input type="checkbox" id="agreement-checkbox">`
+   * `<input type="submit" id="submit-btn">`
 
 
 **HTML:**
