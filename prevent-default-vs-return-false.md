@@ -22,7 +22,7 @@ In brief,
 
 **_Event:_** *it can be something the browser does, or something a user does.*
 
-**_preventDefault():_** is... 
+**_preventDefault():_** *it cancels out the default behavior that belongs to the event.*
 
 
 Now you may think you can use it to prevent from everything in this world that you want. Actually, you couldn't. 
