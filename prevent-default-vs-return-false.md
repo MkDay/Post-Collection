@@ -37,7 +37,7 @@ To realize *why* let's break it down to the following parts,
   * to customize callback functions
      1. customize parameters of callbacks
      1. customize return value of callbacks
-* Where does it become a headache - How to prevent the system by checking for *preventDefault()* while executing heavy JavaScript - *passive: true/false*.
+* Where does the *preventDefault()* becomes a headache?  - *passive true/false*.
 
 
 ### Real-world usage - where we can use *Event.preventDefault()*.
@@ -749,11 +749,13 @@ The *passive* is one of available option.
 
 This is more useful with touch events on mobile browsers. For example, let's suppose, we use the `preventDefault()` within `touchstart` event. In the most time, between two `touchstart` events will have very short intervals. In each time the event has occurred the browser will check whether there is an `Event.preventDefault()` method that is called within the callback function. This cheking will happen even you don't use the `Event.preventDefault()`.
 
-So this process will slow down the web page. To prevent from it, we can use `{passive: true}` option.
+So this is the place where the `.preventDefault()` becomes a headache. Because it will slow down the web page just by only checking for the `preventDefault()`. To prevent from it, we can use `{passive: true}` option.
 
 It tells the browser not to check for the `Event.preventDefault()` method and prevents the page from slowing down.
 
-**_Note:_** *most of the mordern browsers use passive listeners by default for scroll events mobile touch events*
+**_Note:_** *most of the mordern browsers use passive listeners by default for scroll events mobile touch events etc.*
+
+
 
 ```javascript
 
@@ -765,10 +767,17 @@ document.addEventListener('touchstart', (e) => {
 
 ```
 
-### Summary
+### Conclusion
 
-* the event should be cancelable to use `.preventDefault()` with it.
-* it doesn't stop event propagation.
-* it cannot customize parameters of the callback functions unless we use inline onclick.
-* it cannot customize the return value of the callback functions unless we use inline onclick.
-* passive : false
+ At this point I hope you have some sense of preventing default behaviors of an event. To wrapped this out let me summarize things that we talked about all the way through this article.
+
+* to use method the event should be cancelable - `Event.cancelable=true`
+* it cannot stop the event propagation.
+* it cannot modify default parameters and return values of a callback function.
+* sometimes it becomes a headache even where we haven't use it. To overcome it, use `{passive: true}` as an option within the event listener.
+* to check whether the default behavior of an event is prevented or not use `Event.defaultPrevented` property.
+
+**_Happy Coding!_**
+
+
+
