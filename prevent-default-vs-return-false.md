@@ -291,7 +291,7 @@ In the code above, we attach `Event.preventDefault()` to the *submit button*. So
 If our requirement is only to stop the event propagation we can use [Event.stopPropagation()](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) instead using `.preventDefault()`
 
 
-### How to check whether the Event.preventDefault() has been executed or not
+### Where does it become a headache - How to prevent the system by checking for *preventDefault()* while executing heavy JavaScript.
 
 There is a read-only property called [`Event.defaultPrevented`](https://developer.mozilla.org/en-US/docs/Web/API/Event/defaultPrevented) to check whether the `.preventDefault()` has been executed or not. If it has been executed then it returns true, otherwise false. 
 
