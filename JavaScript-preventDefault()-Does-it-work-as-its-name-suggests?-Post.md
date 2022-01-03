@@ -781,7 +781,17 @@ document.addEventListener('touchstart', (e) => {
 * sometimes it becomes a headache even where we haven't use it. To overcome it, use `{passive: true}` as an option within the event listener.
 * to check whether the default behavior of an event is prevented or not use `Event.defaultPrevented` property.
 
-**_Happy Coding!_**
 
 **_Photo Credits: Jon Tyson on Unsplash_**
+
+
+If you enjoyed this article, you can support me at [ko-fi](https://ko-fi.com/mkdaycode). I always appreciate your support, it really encourages me to keep going.
+
+**_Happy Coding!_**
+
+[![image_description](https://cdn.ko-fi.com/cdn/kofi2.png?v=3)](https://ko-fi.com/mkdaycode)
+
+ 
+
+
 
