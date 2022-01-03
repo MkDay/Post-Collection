@@ -283,7 +283,6 @@ btn.addEventListener('click', (e) => {
   if (e.cancelable) {
     e.preventDefault();
     console.log(e.cancelable); // true
-    form.innerHTML += "Please check the agreement before submitting the form";
   }
 });
 
