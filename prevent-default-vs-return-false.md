@@ -1,8 +1,6 @@
-# JavaScript preventDefault() - Does it work the way its name suggests? 
+# JavaScript preventDefault() - Does it work as its name suggests? 
 
-# JavaScript preventDefault() - It won't work everywhere as its name suggest
-
-# JavaScript preventDefault() - It won't work with these 5 use cases
+ 
 
 Often, almost everyone on the web don't like to use **_default behaviors_** which are provided by default. 
 
