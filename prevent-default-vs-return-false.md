@@ -207,7 +207,9 @@ btn.onclick = preventSubmit;
 Okay, now you know how to use `.preventDefault()` practically. But hold on, can we use it anywhere we want to stop default behaior?
 
 Actually we couldn't!
-Followings are the most common things you have to consider before using it.
+
+Followings are some cases we couldn't use it with.
+
   1. with events that couldn't be canceled
   1. to stop event propagation
   1. to create callback functions with custom parameters
