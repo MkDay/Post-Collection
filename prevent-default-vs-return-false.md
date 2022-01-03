@@ -238,8 +238,10 @@ Followings are some cases we couldn't use it with.
 
   1. with events that couldn't be canceled
   1. to stop event propagation
-  1. to create callback functions with custom parameters
-  1. to create callback functions with return values
+  1. to customize callback functions 
+     1. customize parameters of callbacks
+     1. customize return value of callbacks
+ 
 
 
 ### 1. With events that couldn't be canceled
@@ -318,6 +320,8 @@ In simple words, `preventDefault()` cannot stop *event propagation* even it is a
 
 If our requirement is only to stop the event propagation we can use [Event.stopPropagation()](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) instead using `.preventDefault()`
 
+### 3. To customize callback functions
+
 Now at this point we know bit about things that the `.preventDefault()` method can do or cannot do. 
 
 Okay, how about customizing stuff like number of parameters, types of parameters and return value of the callback function using `.preventDefault()`?
@@ -332,9 +336,11 @@ Well, the answer is, you cannot customize both behaviors using `Event.preventDef
 Let's see it in practically. 
 
 
-### 3. To create callback functions with custom parameters
+#### 3.1. Customize parameters of callbacks
 
-#### (1) Not working ways - callbacks with custom parameters
+**(1) Not working ways - callbacks with custom parameters:**
+
+
 
 ```javascript
 
@@ -415,7 +421,7 @@ Uncaught TypeError: Cannot read property 'preventDefault' of undefined
 
 
 
-### (2) Working ways - callbacks with custom parameters
+**Working ways - callbacks with custom parameters:**
 
 Here are some of the working ways when using callback functions with custom parameters.
 
@@ -676,7 +682,7 @@ You will get this result for all the above methods,
 
 ```
 
-### (3) Customize return value of callbacks
+#### 3.1. Customize return value of callbacks
 
 As shown above, we cannot modify number of parameters or type of parameters using `.preventDefault()` unless we use inline onclick to handle the click event. Now let's check whether it can modify at least the return value that inherits by default.
 
