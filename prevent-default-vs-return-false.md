@@ -4,7 +4,9 @@
 
 # JavaScript preventDefault() - It won't work with these 5 use cases
 
-Often, almost everyone on the web don't like to use **_default behaviors_** which are provided by default. For instance, as users we have our own preferences about the color or font-size of the text, themes of a web page (eg: dark or light theme) and, in the meantime, as developers we prefer or need to do different things with some events, such as, stop navigating through a link, stop submitting forms, etc. 
+Often, almost everyone on the web don't like to use **_default behaviors_** which are provided by default. 
+
+For instance, as users we have our own preferences about the color or font-size of the text, themes of a web page (eg: dark or light theme), etc. In the meantime, as developers we prefer or need to do different things with some events, such as, stop navigating through a link, stop submitting forms, etc. 
 
 It seems in both cases, we all need the web as much as flexible and customizable more than ever. As a developer, you're going to have much hard time working on it! 
 
