@@ -202,11 +202,17 @@ btn.onclick = preventSubmit;
 
 ```
 
-### What to consider before using *Event.preventDefault()*.
+### Where does we cannot use it and some alternatives for the *Event.preventDefault()*.
 
-Okay, now you know how to use `.preventDefault()` practically. But hold on, before using it you have to consider a few things  at the first place. 
+Okay, now you know how to use `.preventDefault()` practically. But hold on, can we use it anywhere we want to stop default behaior?
 
+Actually we couldn't!
 Followings are the most common things you have to consider before using it.
+  1. with events that couldn't be canceled
+  1. to stop event propagation
+  1. to create callback functions with custom parameters
+  1. to create callback functions with return values
+
 
 * **Check if the event is cancelable**
 
