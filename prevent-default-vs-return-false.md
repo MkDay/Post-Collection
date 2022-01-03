@@ -34,7 +34,7 @@ For instance, most commonly you cannot use it to stop event propagation. Also, i
 To realize *why* let's break it down to the following parts,
 
 * Real-world usage - where we can use *Event.preventDefault()*.
-* How to check whether the *Event.preventDefault()* has been executed or not.
+* How to check whether the *Event.preventDefault()* has been executed or not - *Event.defaultPrevented*.
 * Where does we cannot use *Event.preventDefault()* and some alternatives for it.
   * with events that couldn't be canceled
   * to stop event propagation
@@ -207,7 +207,7 @@ btn.onclick = preventSubmit;
 
 Congrats! now you know how to use *preventDefault()* to stop default behaviors. But when you use it in practical code, at some point, you may want to make sure whether it actually works or not. This is the place where [`Event.defaultPrevented`](https://developer.mozilla.org/en-US/docs/Web/API/Event/defaultPrevented) comes into the play.
 
-It is a read-only property that checks whether the `.preventDefault()` has been executed or not. If it has been executed then it returns true, otherwise false. 
+It is a read-only property that checks whether the `.preventDefault()` of the event has been executed or not. If it has been executed then it returns true, otherwise false. 
 
 ```javascript
 
@@ -258,7 +258,7 @@ So it seems before use `.preventDefault()` for any event you need to know whethe
 
 Okay, how do we check if it is cancelable or not?
 
-#### Check whether an event is cancelable or not
+#### Check whether an event is cancelable or not - *Event.cancelable*
 
 ```javascript
 
