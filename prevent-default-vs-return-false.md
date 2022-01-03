@@ -219,7 +219,7 @@ Followings are some cases we couldn't use it with.
 ### 1. With events that couldn't be canceled
 
 
-For example, if you suppose to prevent the user from typing in an input field, unfortunately, you cannot use `.preventDefault()` with the `input` event since it is not cancelable. In other word `input` event is a read-only property.  As an alternative, you can simply use, 
+For example, if you suppose to prevent the user from typing in a text input field, unfortunately, you cannot use `.preventDefault()` with the `input` event since it is not cancelable. In other word `input` event is a read-only property.  As an alternative, you can simply use, 
 
 
 ```html
@@ -231,6 +231,8 @@ For example, if you suppose to prevent the user from typing in an input field, u
 So it seems before use `.preventDefault()` for any event you need to know whether the event is `cancelable` (or not a read-only property) or not. If it is not cancelable you cannot use `.preventDefault()` with it.
 
 Okay, how do we check if it is cancelable or not?
+
+#### Check whether an event is cancelable or not
 
 ```javascript
 
@@ -284,7 +286,7 @@ btn.addEventListener('click', preventSubmit);
 
 ```
  
-In the code above, we attach `Event.preventDefault()` to the *submit button*. So it stops submitting form if the checkbox is unchecked. But, it doesn't stop changing the `border-color` of the `form` into red. It seems, the code executes the `.preventDefault()` at first and, bubbling up to the parent element (in this case, `form`) and executes its event if there is any. 
+In the code above, we attach `Event.preventDefault()` to the *submit button*. So it stops submitting form if the checkbox is unchecked. But, it doesn't stop changing the `border-color` of the `form` into red. It seems, the code executes the `.preventDefault()` at first and, bubbling up to the parent element (in this case, `form`) and executes its event if there is any. In the 
 
 If our requirement is only to stop the event propagation we can use [Event.stopPropagation()](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) instead using `.preventDefault()`
 
