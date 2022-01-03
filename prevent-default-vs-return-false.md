@@ -18,9 +18,11 @@ Okay then, let's *prevent* from wasting extra time and dive into the topic.
 
 At this point, you may be wondering about these two terms [*Event*](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events) and [*Event.preventDefault()*](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault) at the first place.
 
-In brief, *Events* are...
+In brief, 
 
-And preventDefault() is... 
+**_Event:_** *it can be something the browser does, or something a user does.*
+
+**_preventDefault():_** is... 
 
 
 Now you may think you can use it to prevent from everything in this world that you want. Actually, you couldn't. 
