@@ -783,5 +783,5 @@ document.addEventListener('touchstart', (e) => {
 
 **_Happy Coding!_**
 
-
+**_Photo Credits: Jon Tyson on Unsplash_**
 
