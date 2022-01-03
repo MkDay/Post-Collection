@@ -314,7 +314,7 @@ btn.addEventListener('click', preventSubmit);
  
 In the code above, we attach `Event.preventDefault()` to the *submit button*. So it stops submitting form if the checkbox is unchecked. But, it doesn't stop changing the `border-color` of the `form` into red. It seems, the code executes the `.preventDefault()` at first and, bubbling up to the parent element (in this case, `form`) and executes its event if there is any. 
 
-In the simple word, `preventDefault()` cannot stop *event propagation* even it is a default behavior of an event.
+In simple words, `preventDefault()` cannot stop *event propagation* even it is a default behavior of an event.
 
 If our requirement is only to stop the event propagation we can use [Event.stopPropagation()](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) instead using `.preventDefault()`
 
@@ -334,6 +334,7 @@ Let's see it in practically.
 
 ### 3. To create callback functions with custom parameters
 
+#### (1) Not working ways - callbacks with custom parameters
 
 ```javascript
 
@@ -414,7 +415,7 @@ Uncaught TypeError: Cannot read property 'preventDefault' of undefined
 
 
 
-### (2) Working ways for callbacks - custom parameters
+### (2) Working ways - callbacks with custom parameters
 
 Here are some of the working ways when using callback functions with custom parameters.
 
