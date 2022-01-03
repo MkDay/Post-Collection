@@ -36,10 +36,12 @@ To realize *why* let's break it down to the following parts,
 * Real-world usage - where we can use *Event.preventDefault()*.
 * How to check whether the *Event.preventDefault()* has been executed or not - *Event.defaultPrevented*.
 * Where does we cannot use *Event.preventDefault()* and some alternatives for it.
+ 
   * with events that couldn't be canceled
   * to stop event propagation
-  * to create callback functions with custom parameters
-  * to create callback functions with return values
+  * to customize callback functions
+     1. customize parameters of callbacks
+     1. customize return value of callbacks
 * Where does it become a headache - How to prevent the system by checking for *preventDefault()* while executing heavy JavaScript.
 
 
@@ -331,6 +333,10 @@ For instance,
 * callback function of the event listener only have a single parameter which is an object based on Event that has occured.
 * Also, it returns nothing. If there is some return value, it will be ignored.
 
+So, what if we need more parameters or another type of parameter instead an object based on Event?
+
+Also, what if we need our callback function to return something?
+
 Well, the answer is, you cannot customize both behaviors using `Event.preventDefault()` unless you tend to use inline `onclick`. 
 
 Let's see it in practically. 
@@ -340,7 +346,7 @@ Let's see it in practically.
 
 **(1) Not working ways - callbacks with custom parameters:**
 
-
+Normally, if we use callback functions followed by parentheses, it will be immediately invoked even without the event is occurred. So we cannot use parentheses means we cannot have custom parameters instead its default one.
 
 ```javascript
 
