@@ -34,7 +34,8 @@ For instance, most commonly you cannot use it to stop event propagation. Also, i
 To realize *why* let's break it down to the following parts,
 
 * Real-world usage - where we can use *Event.preventDefault()*.
-* Where does we cannot use it and some alternatives for the *Event.preventDefault()*.
+* How to check whether the *Event.preventDefault()* has been executed or not.
+* Where does we cannot use *Event.preventDefault()* and some alternatives for it.
   * with events that couldn't be canceled
   * to stop event propagation
   * to create callback functions with custom parameters
@@ -202,7 +203,30 @@ btn.onclick = preventSubmit;
 
 ```
 
-### Where does we cannot use it and some alternatives for the *Event.preventDefault()*.
+### How to check whether the *Event.preventDefault()* has been executed or not
+
+There is a read-only property called [`Event.defaultPrevented`](https://developer.mozilla.org/en-US/docs/Web/API/Event/defaultPrevented) to check whether the `.preventDefault()` has been executed or not. If it has been executed then it returns true, otherwise false. 
+
+```javascript
+
+function preventSubmit(e) {
+  if (!checkbox.checked) {
+    e.preventDefault();
+
+    form.innerHTML +=
+      "Please check the agreement before submitting the form";
+
+    console.log("Default submit behavior is prevented");
+  }
+  
+  console.log(e.defaultPrevented); // true
+}
+
+btn.addEventListener('click', preventSubmit);
+
+```
+
+### Where does we cannot use *Event.preventDefault()* and some alternatives for it.
 
 Okay, now you know how to use `.preventDefault()` practically. But hold on, can we use it anywhere we want to stop default behaior?
 
@@ -291,30 +315,9 @@ In the code above, we attach `Event.preventDefault()` to the *submit button*. So
 If our requirement is only to stop the event propagation we can use [Event.stopPropagation()](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) instead using `.preventDefault()`
 
 
-### Where does it become a headache - How to prevent the system by checking for *preventDefault()* while executing heavy JavaScript.
 
-There is a read-only property called [`Event.defaultPrevented`](https://developer.mozilla.org/en-US/docs/Web/API/Event/defaultPrevented) to check whether the `.preventDefault()` has been executed or not. If it has been executed then it returns true, otherwise false. 
 
-```javascript
-
-function preventSubmit(e) {
-  if (!checkbox.checked) {
-    e.preventDefault();
-
-    form.innerHTML +=
-      "Please check the agreement before submitting the form";
-
-    console.log("Default submit behavior is prevented");
-  }
-  
-  console.log(e.defaultPrevented); // true
-}
-
-btn.addEventListener('click', preventSubmit);
-
-```
-
-### Customize parameters of callbacks
+### 3. To create callback functions with custom parameters
 
 Now at this point we know bit about things that the `.preventDefault()` method can do or cannot do. 
 
