@@ -745,7 +745,7 @@ addEventListener(type, listener, useCapture);
 
 The *passive* is one of available option.
 
-> **passive:** *boolean value that, if true, indicates that the function specified by listener will never call preventDefault(). If a passive listener does call preventDefault(), the user agent will do nothing other than generate a console warning. See Improving scrolling performance with passive listeners to learn more.* **- MDN**
+> **passive:** *boolean value that, if true, indicates that the function specified by listener will never call preventDefault(). If a passive listener does call preventDefault(), the user agent will do nothing other than generate a console warning.* **- MDN**
 
 ```javascript
 
