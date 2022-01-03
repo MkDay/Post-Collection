@@ -729,7 +729,7 @@ However, you can still use inline onclick to handle the click event. In this way
 ```
 
 
-### 4. How to prevent the system by checking for *preventDefault()* while executing heavy JavaScript - *passive true/false*
+### 4. Where does the *preventDefault()* becomes a headache?  - *passive true/false*
 
 The `Event.addEventListener()` has two optional parameters and one of them is **_options_**
 
@@ -747,7 +747,13 @@ The *passive* is one of available option.
 
 > **passive:** *boolean value that, if true, indicates that the function specified by listener will never call preventDefault(). If a passive listener does call preventDefault(), the user agent will do nothing other than generate a console warning.* **- MDN**
 
-This is more useful with touch events on mobile browsers. For example, let's suppose, we use the `preventDefault()` within `touchstart` event. In the most time, between two `touchstart` events will have very short intervals. In each time the event has occurred the browser will check whether there is an `Event.preventDefault()` method that is called within the callback function. It will happen 
+This is more useful with touch events on mobile browsers. For example, let's suppose, we use the `preventDefault()` within `touchstart` event. In the most time, between two `touchstart` events will have very short intervals. In each time the event has occurred the browser will check whether there is an `Event.preventDefault()` method that is called within the callback function. This cheking will happen even you don't use the `Event.preventDefault()`.
+
+So this process will slow down the web page. To prevent from it, we can use `{passive: true}` option.
+
+It tells the browser not to check for the `Event.preventDefault()` method and prevents the page from slowing down.
+
+**_Note:_** *most of the mordern browsers use passive listeners by default for scroll events mobile touch events*
 
 ```javascript
 
