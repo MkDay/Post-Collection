@@ -730,7 +730,21 @@ However, you can still use inline onclick to handle the click event. In this way
 
 
 ### 4. Where does it become a headache - How to prevent the system by checking for *preventDefault()* while executing heavy JavaScript - *passive true/false*
+The *passive* can be used as one of optional parameter of the `Event.addEventListener()` 
 
+The `Event.addEventListener()` has two optional parameters and one of them is **_options_**
+
+**Syntax**
+
+```
+
+addEventListener(type, listener, options);
+
+```
+
+
+
+returns boolean value that, if true, indicates that the function specified by listener will never call preventDefault(). If a passive listener does call preventDefault(), the user agent will do nothing other than generate a console warning. See Improving scrolling performance with passive listeners to learn more.
 
 ```javascript
 
