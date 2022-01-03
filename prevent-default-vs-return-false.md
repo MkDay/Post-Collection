@@ -263,6 +263,9 @@ Okay, how do we check if it is cancelable or not?
 
 #### Check whether an event is cancelable or not - *Event.cancelable*
 
+The `Event.cancelable` property returns true if the event is cancelable otherwise returns false.
+
+
 ```javascript
 
 // check whether an event is cancelable or not
