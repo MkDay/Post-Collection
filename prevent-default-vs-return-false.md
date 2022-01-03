@@ -753,11 +753,11 @@ The *passive* is one of available option.
 
 > **passive:** *boolean value that, if true, indicates that the function specified by listener will never call preventDefault(). If a passive listener does call preventDefault(), the user agent will do nothing other than generate a console warning.* **- MDN**
 
-This is more useful with touch events on mobile browsers. For example, let's suppose, we use the `preventDefault()` within `touchstart` event. In the most time, between two `touchstart` events will have very short intervals. In each time the event has occurred the browser will check whether there is an `Event.preventDefault()` method that is called within the callback function. This cheking will happen even you don't use the `Event.preventDefault()`.
+This is more useful with touch events on mobile browsers. For example, let's suppose, we perform a `touchstart` event on the mobile. In the most time, between two `touchstart` events will have very short intervals. In each time the event has occurred the browser will check whether there is an `Event.preventDefault()` method to execute within the callback function. This checking will happen even you don't use the `Event.preventDefault()` within the callback.
 
-So this is the place where the `.preventDefault()` becomes a headache. Because it will slow down the web page just by only checking for the `preventDefault()`. To prevent from it, we can use `{passive: true}` option.
+So this is the place where the `.preventDefault()` becomes a headache. Because the event will slow down the web page just by only checking for the `preventDefault()`. To prevent from it, we can use `{passive: true}` option.
 
-It tells the browser not to check for the `Event.preventDefault()` method and prevents the page from slowing down.
+It tells the browser not to check for the `Event.preventDefault()` method and it prevents the page from slowing down.
 
 **_Note:_** *most of the mordern browsers use passive listeners by default for scroll events mobile touch events etc.*
 
