@@ -216,7 +216,7 @@ Followings are some cases we couldn't use it with.
   1. to create callback functions with return values
 
 
-* **Check if the event is cancelable**
+### 1. With events that couldn't be canceled
 
 
 For example, if you suppose to prevent the user from typing in an input field, unfortunately, you cannot use `.preventDefault()` with the `input` event since it is not cancelable. In other word `input` event is a read-only property.  As an alternative, you can simply use, 
@@ -255,7 +255,7 @@ btn.addEventListener('click', (e) => {
 
 ``` 
 
-* **It doesn't stop the event propagation**
+### 2. To stop event propagation
 
 It is another misunderstanding about the `Event.preventDefault()` method. You cannot stop [Event propagation](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Examples#example_5_event_propagation) using just only `.preventDefault()`. 
 
