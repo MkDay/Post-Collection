@@ -729,7 +729,7 @@ However, you can still use inline onclick to handle the click event. In this way
 ```
 
 
-### 4. Where does it become a headache - How to prevent the system by checking for *preventDefault()* while executing heavy JavaScript - *passive true/false*
+### 4. How to prevent the system by checking for *preventDefault()* while executing heavy JavaScript - *passive true/false*
 
 The `Event.addEventListener()` has two optional parameters and one of them is **_options_**
 
@@ -746,6 +746,8 @@ addEventListener(type, listener, useCapture);
 The *passive* is one of available option.
 
 > **passive:** *boolean value that, if true, indicates that the function specified by listener will never call preventDefault(). If a passive listener does call preventDefault(), the user agent will do nothing other than generate a console warning.* **- MDN**
+
+This is more useful with touch events on mobile browsers. For example, let's suppose, we use the `preventDefault()` within `touchstart` event. In the most time, between two `touchstart` events will have very short intervals. In each time the event has occurred the browser will check whether there is `Event.preventDefault()`
 
 ```javascript
 
