@@ -430,7 +430,7 @@ Uncaught TypeError: Cannot read property 'preventDefault' of undefined
 
 
 
-**Working ways - callbacks with custom parameters:**
+**(2) Working ways - callbacks with custom parameters:**
 
 However, there are some alternatives to customize parameters of the callback functions.
 
