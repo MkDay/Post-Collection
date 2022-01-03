@@ -281,8 +281,8 @@ input.addEventListener("input", (e) => {
 
 btn.addEventListener('click', (e) => {
   if (e.cancelable) {
-    e.preventDefault();
     console.log(e.cancelable); // true
+    e.preventDefault();
   }
 });
 
