@@ -127,7 +127,9 @@ const btn = document.querySelector("#submit-btn");
 
 
 ```
+**_CodePen live demo for the HTML & CSS:_**
 
+{% codepen https://codepen.io/MkDay/pen/VwMQrKQ %}
 And, here is the JavaScript callback functions where we use the `preventDefault()` method.
 
 **JS:**
