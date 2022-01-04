@@ -817,7 +817,7 @@ document.addEventListener('touchstart', (e) => {
 
 ### Conclusion
 
- Finally, I hope you have some sense of preventing default behaviors of an event. To wrap this out, let me summarize what we discussed in this article.
+ Finally, I hope, now you have some sense of preventing default behaviors of an event. To wrap this out, let me summarize what we discussed in this article.
 
 * to use `preventDefault()` method, the event should be cancelable - `Event.cancelable=true`
 * it cannot stop the event propagation.
