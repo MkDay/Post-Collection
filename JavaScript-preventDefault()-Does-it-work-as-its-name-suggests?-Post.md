@@ -251,7 +251,7 @@ btn.addEventListener('click', preventSubmit);
 
 ### Where does we cannot use *Event.preventDefault()* and some alternatives for it.
 
-Congrats! we stopped things provided by default.
+At this point, we already know how to stop things provided by default.
 
 It's cool, right?
 
