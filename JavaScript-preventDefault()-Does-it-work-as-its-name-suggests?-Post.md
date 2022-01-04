@@ -229,7 +229,7 @@ btn.addEventListener('click', preventSubmit);
 
 ### Where does we cannot use *Event.preventDefault()* and some alternatives for it.
 
-Okay, now you know how to use `.preventDefault()` practically. But hold on, can we use it anywhere we want to stop default behaior?
+Okay, now you know how to use `.preventDefault()` practically. But hold on, can we use it anywhere we want to stop default behaiors of an event?
 
 Actually we couldn't!
 
