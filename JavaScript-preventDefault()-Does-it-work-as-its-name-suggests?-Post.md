@@ -829,8 +829,7 @@ document.addEventListener('touchstart', (e) => {
 * use the `Event.defaultPrevented` property to check whether the default behavior of an event is prevented or not.
 
 
-**_Photo Credits: Jon Tyson on Unsplash_**
-
+**_Photo Credits: Greg Rakozy on Unsplash_** 
 
 If you enjoyed this article, you can support me at [ko-fi](https://ko-fi.com/mkdaycode). I always appreciate your support, it really encourages me to keep going.
 
