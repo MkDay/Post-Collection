@@ -2,30 +2,38 @@
 
  
 
-Often, almost everyone on the web don't like to use **_default behaviors_** which are provided by default. 
+Often, almost everyone on the web doesn't like to use **_default behaviors_** which are provided by default. 
 
-For instance, as users we have our own preferences about the color or font-size of the text, themes of a web page (eg: dark or light theme), etc. In the meantime, as developers we prefer or need to do different things with some events, such as, stop navigating through a link, stop submitting forms, etc. 
+For instance, as users, we have preferences about the color or font size of the text, themes of a web page (dark or light theme), etc. 
 
-It seems in both cases, we all need the web as much as flexible and customizable more than ever. As a developer, you're going to have much hard time working on it! 
+In the meantime, as developers, we prefer or need to do different things with some events, like stop navigating through a link, stop submitting forms, etc. 
+
+It seems in both cases, we all need the web as much flexible and customizable more than ever!  
+
+You, as a developer, might have a much hard time working on it! 
 
 
-So, no one on the web needs default, means they needs to prevent from default. That's where the JavaScript Event.preventDefault() comes in to the play.
+If no one on the web needs default behaviors, how do we cancel them out and do something else? 
 
-**_Note:_** this `Event.preventDefault()` method is not limited to pure JavaScript language, it can be found in languages like React and Jquery. But in this article, let's just stick with pure JavaScript. 
+That's the place where the JavaScript *Event.preventDefault()* comes into play.
 
-Okay then, let's *prevent* from wasting extra time and dive into the topic. 
+**_Note:_** the `Event.preventDefault()` method is not limited to pure JavaScript language. You can also find it in languages like React and Jquery. But for now, let's stick only with pure JavaScript. 
+
+Okay, let's *prevent* from wasting extra time and dive into the topic. 
 
 
 At this point, you may be wondering about these two terms [*Event*](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events) and [*Event.preventDefault()*](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault) at the first place.
 
 In brief, 
 
-**_Event:_** *it can be something the browser does, or something a user does.*
+**_Event:_** *it can be something the browser does or something the user does.*
 
-**_preventDefault():_** *it cancels out the default behavior that belongs to the event.*
+**_preventDefault():_** *it cancels out the default behavior that belongs to a particular event.*
 
 
-Now you may think you can use it to prevent from everything in this world that you want. Actually, you couldn't. 
+Now you may think you can use it to prevent everything in this world that you want. 
+
+Well, you couldn't. 
 
 
 To realize *why* let's break it down to the following parts,
@@ -34,7 +42,7 @@ To realize *why* let's break it down to the following parts,
 * How to check whether the *Event.preventDefault()* has been executed or not - *Event.defaultPrevented*.
 * Where does we cannot use *Event.preventDefault()* and some alternatives for it.
  
-  * with events that couldn't be canceled
+  * with events that cannot be canceled
   * to stop event propagation
   * to customize callback functions
      1. customize parameters of callbacks
@@ -45,19 +53,25 @@ To realize *why* let's break it down to the following parts,
 ### Real-world usage - where we can use *Event.preventDefault()*.
 
 
-Here is the most common use case where you can use it. Let's say you have a form to fill and, before submitting it you might be asked to read and agree to some policy statement. At that point the form submission might not happend if you didn't check the checkbox followed by some text like *I agree...*. 
+Here is the most common use case where you can use it. 
+
+Let's say you have a form to fill and, before submitting it, you might be asked to read and agree to some policy statement. 
+
+At that point, the form submission might not happen if you didn't check the checkbox followed by some text like *I agree...*. 
  
-And here are some more real-world use cases for the `.preventDefault()`
+And here are some more real-world use cases for the `.preventDefault()`:
 
 * to prevent the user from refreshing the page. 
-* to prevent the user from navigating through a link (anchor element with some URL to another page) after clicking on it.
+* to prevent the user from navigating through a link (anchor element with some URL to another page).
 * to prevent the user from copying content from a web page, etc.   
 
-Now let's see some examples to understand how it works. For instance the following code shows you how to prevent the user from,
+Now let's see some examples to understand how it works. 
+
+For instance, the following code shows you how to prevent the user from,
 * navigating through a link 
 * submitting a form.
 
-In our main HTML code has the following important elements.
+In our main HTML code has the following elements.
 * `<a>` element with a URL.
 * `<form id="form-submission">` element with three types of input elements as its children.
    * `<input type="text" id="input-text">`
@@ -95,7 +109,7 @@ In our main HTML code has the following important elements.
 
 ```
 
-These are the selected HTML elements we're going to use specially within JavaScript.
+Here we select them within JavaScript.
 
 ```javascript
 
@@ -114,7 +128,7 @@ const btn = document.querySelector("#submit-btn");
 
 ```
 
-And, The JavaScript callback functions that use `preventDefault()`.
+And, here is the JavaScript callback functions where we use the `preventDefault()` method.
 
 **JS:**
 
@@ -145,7 +159,11 @@ function preventSubmit(e) {
 
 ```
 
-Now we're going to use those callbacks with `.addEventListener()`, `onclick` within JavaScript and, inline `onclick` attribute to give you a more clarity.
+Now we're going to use those callbacks with,
+* `.addEventListener()`
+* `onclick` within JavaScript
+* inline `onclick` attribute 
+to give you some more clarity.
 
 **(i) addEventListener()**
 
@@ -204,9 +222,13 @@ btn.onclick = preventSubmit;
 
 ### How to check whether the *Event.preventDefault()* has been executed or not - *Event.defaultPrevented*
 
-Congrats! now you know how to use *preventDefault()* to stop default behaviors. But when you use it in practical code, at some point, you may want to make sure whether it actually works or not. This is the place where [`Event.defaultPrevented`](https://developer.mozilla.org/en-US/docs/Web/API/Event/defaultPrevented) comes into the play.
+Let's say you have already used the `.preventDefalt()` method in your code and, you may want to make sure whether it works or not at some point. 
+ 
+That is the place where [`Event.defaultPrevented`](https://developer.mozilla.org/en-US/docs/Web/API/Event/defaultPrevented) comes into the play.
 
-It is a read-only property that checks whether the `.preventDefault()` of the event has been executed or not. If it has been executed then it returns true, otherwise false. 
+* It is a read-only property.
+ * It returns true if the default behavior of the *event* has been prevented.
+* Otherwise, it returns false. 
 
 ```javascript
 
@@ -229,13 +251,16 @@ btn.addEventListener('click', preventSubmit);
 
 ### Where does we cannot use *Event.preventDefault()* and some alternatives for it.
 
-Okay, now you know how to use `.preventDefault()` practically. But hold on, can we use it anywhere we want to stop default behaiors of an event?
+Congrats! we stopped things provided by default.
 
-Actually we couldn't!
+It's cool, right?
 
-Followings are some cases we couldn't use it with.
+But hold on, can we use it anywhere we want to stop default behaviors of an event?
 
-  1. with events that couldn't be canceled
+Actually, we couldn't!
+
+We couldn't use it,
+  1. with events that cannot be canceled
   1. to stop event propagation
   1. to customize callback functions 
      1. customize parameters of callbacks
@@ -243,10 +268,12 @@ Followings are some cases we couldn't use it with.
  
 
 
-### 1. With events that couldn't be canceled
+### 1. With events that cannot be canceled
 
 
-For example, if you suppose to prevent the user from typing in a text input field, unfortunately, you cannot use `.preventDefault()` with the `input` event since it is not cancelable. In other word `input` event is a read-only property.  As an alternative, you can simply use, 
+For example, if you suppose to prevent the user from typing in a text input field, unfortunately, you cannot use `.preventDefault()` with the `input` event since it is not cancelable. 
+
+In other words `input` event is a read-only property. As an alternative, you can use the `readonly` attribute like below.
 
 
 ```html
@@ -255,13 +282,13 @@ For example, if you suppose to prevent the user from typing in a text input fiel
 
 ```
 
-So it seems before use `.preventDefault()` for any event you need to know whether the event is `cancelable` (or not a read-only property) or not. If it is not cancelable you cannot use `.preventDefault()` with it.
+So it seems before using `.preventDefault()` to cancel any event, you should find out whether the *event* is `cancelable` or not. If it is not cancelable, you cannot use `.preventDefault()` to cancel it.
 
 Okay, how do we check if it is cancelable or not?
 
 #### Check whether an event is cancelable or not - *Event.cancelable*
 
-The `Event.cancelable` property returns true if the event is cancelable otherwise returns false.
+The `Event.cancelable` property returns true if the *event* is cancelable otherwise returns false.
 
 
 ```javascript
@@ -315,37 +342,45 @@ btn.addEventListener('click', preventSubmit);
 
 ```
  
-In the code above, we attach `Event.preventDefault()` to the *submit button*. So it stops submitting form if the checkbox is unchecked. But, it doesn't stop changing the `border-color` of the `form` into red. It seems, the code executes the `.preventDefault()` at first and, bubbling up to the parent element (in this case, `form`) and executes its event if there is any. 
+In the code above, we attach `Event.preventDefault()` to the *submit button*. So it stops submitting the form if the checkbox is unchecked. But, it doesn't stop changing the `border-color` of the `form` into the red. 
 
-In simple words, `preventDefault()` cannot stop *event propagation* even it is a default behavior of an event.
+It seems the code works as follows,
+* checks for the `click` event of the `btn` element.
+* executes the `preventDefault()` 
+* hence, it won't submit the form.
+* then bubbles up to the parent element (in this case, `form`).
+* finds `click` event there and executes it too.
+
+In simple words, `preventDefault()` cannot stop *event propagation* even it is one of the default behaviors of events.
 
 If our requirement is only to stop the event propagation we can use [Event.stopPropagation()](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) instead using `.preventDefault()`
 
 ### 3. To customize callback functions
 
-Now at this point we know bit about things that the `.preventDefault()` method can do or cannot do. 
+Now at this point, we know a bit about things that the `.preventDefault()` method can do or cannot do. 
 
-Okay, how about customizing stuff like number of parameters, types of parameters and return value of the callback function using `.preventDefault()`?
+Okay, how about customizing things, like, the number of parameters, types of parameters, and return value of the callback function using `.preventDefault()`?
 
 For instance,
 
-* callback function of the event listener only have a single parameter which is an object based on Event that has occurred.
-* Also, it returns nothing. If there is some return value, it will be ignored.
+* callback function of the event listener only can have a single parameter which is an object, based on *Event* that has occurred.
+* Also, it returns nothing. 
+* If there is some return value, it will be ignored.
 
-So, what if we need more parameters or another type of parameter instead an object based on Event?
+So, what if we need more parameters or another type of parameter instead of an object, based on *Event*?
 
 Also, what if we need our callback function to return something?
 
-Well, the answer is, you cannot customize both behaviors using `Event.preventDefault()` unless you tend to use inline `onclick`. 
+Well, the answer is, you cannot customize both behaviors using `Event.preventDefault()` unless you tend to use the inline `onclick` attribute. 
 
-Let's see it in practically. 
+Let's see it practically. 
 
 
 #### 3.1. Customize parameters of callbacks
 
 **(1) Not working ways - callbacks with custom parameters:**
 
-Normally, if we use callback functions followed by parentheses, it will be immediately invoked even without the event has occurred. So we cannot use parentheses means we cannot have custom parameters instead its default one.
+If we use callback functions followed by parentheses, it will be immediately invoked even without the *event* has been occurred. So we cannot use parentheses, which means we cannot have custom parameters other than its default one.
 
 The code below will never work as we expected.
 
@@ -386,7 +421,7 @@ function preventSubmitCustom(e, num) {
 
  // using addEventListener()
 
-/* these cannot be used, why because they will be immediately invoked when the page is loaded. */
+/* these callbacks are invalid because they will be immediately invoked when the page is loaded. */
 
 link.addEventListener("click", preventLinkCustom(event, 12));
 
@@ -408,7 +443,7 @@ Uncaught TypeError: Cannot read property 'preventDefault' of undefined
 
  // using onclick within JS
 
- /* these cannot be used, why because they will be immediately invoked when the page is loaded. */
+ /* these callbacks are invalid because they will be immediately invoked when the page is loaded. */
 
  link.onclick = preventLinkCustom(event, 12);
 
@@ -430,15 +465,15 @@ Uncaught TypeError: Cannot read property 'preventDefault' of undefined
 
 **(2) Working ways - callbacks with custom parameters:**
 
-However, there are some alternatives to customize parameters of the callback functions.
+However, there are some alternatives to customize *parameters* of the callback functions.
 
-In every method we only use inline onclick to handle the *click* event.
+In each method, we only use the *inline-onclick* attribute to handle the *click* event.
 
-**_Note:_** *it is not recommended to use inline-onclick attribute to handle an event as a good practice.*
+**_Note:_** *it is not recommended to use *inline-onclick* attribute to handle an event as a good practice.*
 
 **Method 1:** 
 
-Using inline `onclick` attribute in the HTML and `.preventDefault()` in its callback function we can easily acheive this requirement like below.
+Using `inline-onclick` attribute in the HTML and `.preventDefault()` in its callback function, we can achieve this requirement like below.
 
 ```
 
@@ -520,9 +555,9 @@ HTML:
 
 **Method 2:** 
 
-In this method, we use inline `onclick` in the HTML and use there,
+In this method, we use the *inline-onclick* in the HTML and add there,
 
-* a regular funcrion without *Event* object parameter but your custom parameters.
+* a regular function without *Event* object parameter but your custom parameters.
 * return false.
 
 ```
@@ -693,9 +728,9 @@ You will get this result for all the above methods,
 
 #### 3.2. Customize return value of callbacks
 
-As shown above, we cannot modify number of parameters or type of parameters using `.preventDefault()` unless we use inline onclick to handle the click event. Now let's check whether it can modify at least the return value that it inherits by default.
+As shown above, we cannot modify the number of parameters or type of parameters using `.preventDefault()` unless we use the *inline-onclick* to handle the click event. Now let's check whether it can modify the return value that it inherits by default.
 
-By default, the callback function returns nothing, if there is some return value, it will be ignored.
+By default, the callback function returns nothing. If there is some return value, it will be ignored.
 
 ```javascript
 
@@ -718,9 +753,9 @@ btn.addEventListener('click', preventSubmitCustom);
 
 ```
 
-This code makes no sense and no effect when it adds to an event listener. So it seems our `.preventDefault()` cannot stop that default behavior too.
+This code makes no sense and has no effect when it adds to an event listener. So it seems our `.preventDefault()` cannot stop that default behavior too.
 
-However, you can still use inline onclick to handle the click event. In this way it will work.
+However, you can still use inline onclick to handle the click event. In this way, it will work.
 
 ```html
 
@@ -735,7 +770,7 @@ However, you can still use inline onclick to handle the click event. In this way
 
 ### 4. Where does the *preventDefault()* becomes a headache?  - *passive true/false*
 
-The `Event.addEventListener()` has two optional parameters and one of them is **_options_**
+The `Event.addEventListener()` has two optional parameters and one of them is **_options_**.
 
 
 **Syntax**
@@ -747,17 +782,27 @@ addEventListener(type, listener, useCapture);
 
 ```
 
-The *passive* is one of available option.
+The *passive* is one of the available options.
 
-> **passive:** *boolean value that, if true, indicates that the function specified by listener will never call preventDefault(). If a passive listener does call preventDefault(), the user agent will do nothing other than generate a console warning.* **- MDN**
+> **passive:** *boolean value that, if true, indicates that the function specified by the listener will never call preventDefault(). If a passive listener does call preventDefault(), the user agent will do nothing other than generate a console warning.* **- MDN**
 
-This is more useful with touch events on mobile browsers. For example, let's suppose, we perform a `touchstart` event on the mobile. In the most time, between two `touchstart` events will have very short intervals. In each time the event has occurred the browser will check whether there is an `Event.preventDefault()` method to execute within the callback function. This checking will happen even you don't use the `Event.preventDefault()` within the callback.
+It is more useful with touch events on mobile browsers. 
 
-So this is the place where the `.preventDefault()` becomes a headache. Because the event will slow down the web page just by only checking for the `preventDefault()`. To prevent from it, we can use `{passive: true}` option.
+For example, suppose we perform a `touchstart` event on the mobile. 
 
-It tells the browser not to check for the `Event.preventDefault()` method and it prevents the page from slowing down.
+When a `touchstart` event has occurred, 
+* The browser will check whether there is an `Event.preventDefault()` method to execute within the callback function. 
+* This checking will happen even you don't use the `Event.preventDefault()` within the callback.
 
-**_Note:_** *most of the mordern browsers use passive listeners by default for scroll events mobile touch events etc.*
+Also, there will be a small time gap between each two `touchstart` events. Maybe it is smaller than the execution time of a single `touchstart` event. It will cause to slow down the web page running.
+
+So this is the place where the `.preventDefault()` becomes a headache since the *event* will slow down the page running, just by only checking for the `preventDefault()` method.
+
+To prevent it, we can use the `{passive: true}` option.
+
+It tells the browser not to check for the `Event.preventDefault()` method and prevents the page from slowing down.
+
+**_Note:_** *Most of the modern browsers use passive listeners by default for mobile touch events. So you don't need to use `{passive: true}` there. However, it's still good to use while considering all browsers. 
 
 
 
@@ -773,13 +818,13 @@ document.addEventListener('touchstart', (e) => {
 
 ### Conclusion
 
- At this point I hope you have some sense of preventing default behaviors of an event. To wrapped this out let me summarize things that we talked about all the way through this article.
+ At this point, I hope you have some sense of preventing default behaviors of an event. To wrap this out, let me summarize what we discussed in this article.
 
 * to use `preventDefault()` method, the event should be cancelable - `Event.cancelable=true`
 * it cannot stop the event propagation.
 * it cannot modify default parameters and return values of a callback function.
-* sometimes it becomes a headache even where we haven't use it. To overcome it, use `{passive: true}` as an option within the event listener.
-* to check whether the default behavior of an event is prevented or not use `Event.defaultPrevented` property.
+* sometimes it becomes a headache even where we haven't used it. To overcome it, use `{passive: true}` as an option within the event listener.
+* use the `Event.defaultPrevented` property to check whether the default behavior of an event is prevented or not.
 
 
 **_Photo Credits: Jon Tyson on Unsplash_**
@@ -790,8 +835,3 @@ If you enjoyed this article, you can support me at [ko-fi](https://ko-fi.com/mkd
 **_Happy Coding!_**
 
 [![image_description](https://cdn.ko-fi.com/cdn/kofi2.png?v=3)](https://ko-fi.com/mkdaycode)
-
- 
-
-
-
