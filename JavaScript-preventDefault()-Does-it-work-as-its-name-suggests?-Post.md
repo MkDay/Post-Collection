@@ -13,7 +13,7 @@ It seems in both cases, we all need the web as much flexible and customizable mo
 You, as a developer, might have a much hard time working on it! 
 
 
-If no one on the web needs default behaviors, how do we cancel them out and do something else? 
+Well, if no one on the web needs default behaviors, how do we cancel them out and do something else? 
 
 That's the place where the JavaScript *Event.preventDefault()* comes into play.
 
