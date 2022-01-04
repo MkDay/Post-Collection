@@ -346,8 +346,7 @@ In the code above, we attach `Event.preventDefault()` to the *submit button*. So
 
 It seems the code works as follows,
 * checks for the `click` event of the `btn` element.
-* executes the `preventDefault()` 
-* hence, it won't submit the form.
+* executes the `preventDefault()` hence, it won't submit the form.
 * then bubbles up to the parent element (in this case, `form`).
 * finds `click` event there and executes it too.
 
