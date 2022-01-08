@@ -406,7 +406,9 @@ $$$$ screenshot no opacity blue box $$$$$
 
 #### 3. Using *rgba()* for the parent element
 
-This is so simple, all you need to do is just remove the `opacity: 0.3` from `#box` and change its `background-color` as `rgba()` color and set your opacity as the fourth value there.  
+This is another way to get the expected result. And, it is the most simple one. 
+
+All you need to do is just remove the `opacity: 0.3` from `#box` and change its `background-color` as `rgba()` color and set your opacity as the fourth value there.  
 
 ```css
 
