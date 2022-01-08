@@ -3,7 +3,7 @@
 
 Maybe you had a lot of hard times like I had, trying to blur the background element without affecting its internal elements such as child elements, text, etc.
 
-As the first thought, you may think it's not a big deal and, you may suggest to use `opacity` for it. 
+Or you didn't have any experience like that and as the first thought, you may think it's not a big deal and, you may suggest to use `opacity`to do the job. 
 
 And the next moment, you might be wondering, okay if the `opacity` does the job then what does the *alpha* value of the `rgba()` do?
 
