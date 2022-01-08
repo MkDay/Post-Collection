@@ -505,7 +505,7 @@ In my opinion, it is better to use `rgba()` if you just want to blur the backgro
 
 ### Conclusion
 
-As the last thing, let me give you a quick recap what you exactly got from this artcle. 
+As the last thing, let me recap what you exactly got from this artcle. 
 
 
 * a few ways to blur the background element without affecting its internal elements. 
