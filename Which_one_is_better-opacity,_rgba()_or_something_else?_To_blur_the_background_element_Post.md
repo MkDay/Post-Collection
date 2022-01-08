@@ -21,8 +21,8 @@ $$$$ screenshot working one $$$$
 To get that output, we can try the following options.
 
 1. Using two separate elements 
-2. Using *opacity* 
-3. Using *rgba()*
+2. Using *opacity* for the parent element
+3. Using *rgba()* for the parent element
 4. Changing *visibility* to *hidden* or *color* to *transparent* (to completely hide the background element)
 
 Let's try these options one by one to achieve our requirement.
@@ -163,7 +163,7 @@ However, some of them can be bit tricky.
 
 So let's take a look how to blur an background element that has child/pseudo element as its inner element.
 
-### 2. Using opacity
+### 2. Using *opacity* for the parent element
 
 
 One of ways to blur an element is using `opacity` property. 
@@ -404,7 +404,7 @@ Now you'll get the following result as you expected.
 $$$$ screenshot no opacity blue box $$$$$
 
 
-#### 3. Using *rgba()*
+#### 3. Using *rgba()* for the parent element
 
 This is so simple, all you need to do is just remove the `opacity: 0.3` from `#box` and change its `background-color` as `rgba()` color and set your opacity as the fourth value there.  
 
