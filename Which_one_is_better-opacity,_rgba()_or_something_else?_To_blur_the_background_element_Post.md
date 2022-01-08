@@ -495,7 +495,7 @@ However, let me explain some of differences between both of them.
 
 * The value of `opacity` applies to the whole element, including its child elements, text, borders, colors, etc.
 
-* In the meantime, *alpha* value (which used to set the opacity) of the `rgba()` only applies only to the color of that particular element.
+* In the meantime, *alpha* value (which used to set the opacity) of the `rgba()` only applies to the color of that particular element.
 
 So that's the reason you got the `#box:before` as blured at our 1st attempt where we used `opacity` to blur only the background element.
 
