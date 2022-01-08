@@ -295,7 +295,7 @@ What we just want is make the `opacity` of the `#box` as 0.3 and `opacity` of th
 
 #### Using *opacity* - 2nd Attempt: 
 
-To acheive that, let's follow these steps.
+To fix the problem, let's follow these steps.
 
 * **step 1:** Swap `width` and `height` values between `#box` and `#box:before`
 
