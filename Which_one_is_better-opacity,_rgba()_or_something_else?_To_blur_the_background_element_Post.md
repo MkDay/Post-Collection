@@ -200,7 +200,7 @@ Here is our HTML code.
 
 #### Using *opacity* - 1st Attempt: 
 
-So, we have a `div` element called `#box` and a pseudo-element (`#box:before`) in it.
+So, we have a `div` element called `#box` and its pseudo-element (`#box:before`) in it.
 
 ```css
 
