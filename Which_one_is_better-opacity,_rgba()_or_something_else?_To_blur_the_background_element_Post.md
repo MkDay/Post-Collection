@@ -171,7 +171,7 @@ So let's take a look how to blur an background element that has child/pseudo ele
 
 One of ways to blur an element is using `opacity` property. 
 
-In the simple words, the `opacity` sets the see-through (transparent) level of an element. If its value is,
+In simple words, the `opacity` sets the see-through (transparent) level of an element. If its value is,
 
 * **_1_** :- which means there's no transparency at all (default value). 
 
@@ -217,7 +217,7 @@ In the CSS we have a `div` called `#box` and, we have a pseudo element (`#box:be
 
 As the first thing let us place them neatly.
 
-To do so, `#box:before` make as centered using *flex* inside the `#box`. Also, make the `position` as `absolute` of the `#box` and, push it down by `25%` away from the screen. 
+To do so, make the `#box:before` as centered using *flex* inside the `#box`. Also, make the `position` as `absolute` of the `#box` and, push it down by `25%` away from the screen. 
 
 ```css
 
