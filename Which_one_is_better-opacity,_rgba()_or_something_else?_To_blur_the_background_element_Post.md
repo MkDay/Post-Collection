@@ -1,9 +1,9 @@
 
 # Which one is better - opacity, rgba() or something else? To blur the background element
 
-Maybe you had a lot of hard times like I had, trying to blur the background element without affecting its internal elements such as child elements, text, etc.
+Maybe you had a lot of hard times like I had, trying to blur the background element without affecting its internal elements such as, child elements, text, etc.
 
-Or you didn't have any experience like that and as the first thought, you may think it's not a big deal and, you may suggest to use `opacity`to do the job. 
+Or maybe you didn't have any experience like that at all. If so, as the first thought, you may think, "oh! it won't be a big deal"? and, you may suggest to use `opacity` to do the job. 
 
 And the next moment, you might be wondering, okay if the `opacity` does the job then what does the *alpha* value of the `rgba()` do?
 
@@ -11,10 +11,12 @@ It seems there are some questions to be solved, right?
 
 So let's dig into the details.
 
-Here is the output that we expected to get without getting unexpected result. 
+We have a blue color inner element and orange color background element like below.
+$ screenshot: withot blur $
 
+And, we want the background element to be blured like below.
 
-$$$$ screenshot working one $$$$
+$ screenshot: with blur $
 
 
 
@@ -73,6 +75,7 @@ Then, give some `width`, `height` and `background-color` to the `outside-div` an
  background: rgb(0, 0, 255);
 }
 
+```
 And, to drag the both `div` bit down from the top of the screen, we can use `position: absolute` and `top: 25%` for the both elements. 
 
 ```css
@@ -149,7 +152,7 @@ body {
 
 ```
 
-Congrats! you made it! 
+Oh, it works!
 
 Finally we're finished with solving the problem!
 
@@ -170,11 +173,11 @@ One of ways to blur an element is using `opacity` property.
 
 In the simple words, the `opacity` sets the see-through (transparent) level of an element. If its value is,
 
-* 1: which means there's no transparency at all (default value). 
+* **_1_** :- which means there's no transparency at all (default value). 
 
-* 0: which means it is fully transparent.
+* **_0_** :- which means it is fully transparent.
 
-* 0.5: which means see-through level is 50%.
+* **_0.5_** :- which means see-through level is 50%.
 
 So let's try to use `opacity`. 
 
@@ -286,9 +289,9 @@ body {
 
 This is the visual result that we've got.
 
-$$$$ screenshot of the burly blue box. $$$$$
+$ screenshot: not working opacity $
 
-Okay, I know what are you thinking right now. Because it isn't the result that we expected, right?
+Okay, I know what you are thinking right now. Because it isn't the result that we expected, right?
 
 What we just want is make the `opacity` of the `#box` as 0.3 and `opacity` of the `#box:before` as 1 (default opacity).
 
@@ -297,7 +300,7 @@ What we just want is make the `opacity` of the `#box` as 0.3 and `opacity` of th
 
 To fix the problem, let's follow these steps.
 
-* **step 1:** Swap `width` and `height` values between `#box` and `#box:before`
+* **Step 1:** Swap `width` and `height` values between `#box` and `#box:before`
 
 
 ```css
@@ -317,7 +320,7 @@ To fix the problem, let's follow these steps.
 
 ``` 
 
-* **step 2:** Change the `top` property from `top: 25%` to `top: calc(25% + 100px)` of the `#box` 
+* **Step 2:** Change the `top` property from `top: 25%` to `top: calc(25% + 100px)` of the `#box` 
 
 By doing so, `#box:before` can be placed exactly 25% down from the screen top.
 
@@ -332,10 +335,10 @@ By doing so, `#box:before` can be placed exactly 25% down from the screen top.
 
 ```
 
-* **step 3:** Set *z-index*
+* **Step 3:** Set *z-index*
 
-* for the `#box`: `z-index: 2` 
-* for the `#box:before`: `z-indx: 1`  
+  1. for the `#box`: `z-index: 2` 
+  2. for the `#box:before`: `z-indx: 1`  
 
 By doing so, `#box:before` will be pushed behind the `#box`.
 
@@ -353,7 +356,7 @@ By doing so, `#box:before` will be pushed behind the `#box`.
 
 ```
 
-* **step 4:** Set `opacity: 0.3` to the `#box:before`
+* **Step 4:** Set `opacity: 0.3` to the `#box:before`
 
 ```css
 
@@ -377,7 +380,8 @@ Complete CSS code is like below.
   
  display: flex;
  justify-content: center;
- align-items: center; 
+ align-items: center;
+ 
  background: rgb(0, 0, 255);
 
  z-index: 2; 
@@ -401,7 +405,7 @@ Complete CSS code is like below.
 
 Now you'll get the following result as you expected.
 
-$$$$ screenshot no opacity blue box $$$$$
+$ screenshot: working opacity $
 
 
 #### 3. Using *rgba()* for the parent element
@@ -435,6 +439,8 @@ All you need to do is just remove the `opacity: 0.3` from `#box` and change its 
 }
 
 ```
+
+$ screenshot: working rgba() $
 
 
 #### 4. Changing visibility to hidden or color to transparent (to completely hide the background element) 
