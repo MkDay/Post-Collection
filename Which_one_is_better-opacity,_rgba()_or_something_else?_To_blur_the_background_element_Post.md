@@ -1,20 +1,23 @@
+# Which one is better - opacity, rgba(), or something else? To blur the background-element
 
-# Which one is better - opacity, rgba() or something else? To blur the background element
+Maybe you had a lot of hard times like I had, trying to blur the background element without affecting its inner contents such as child elements, text, borders, etc.
 
-Maybe you had a lot of hard times like I had, trying to blur the background element without affecting its internal elements such as, child elements, text, etc.
+In my case, as the first thought, I turned to the `opacity` to do the job.
 
-Or maybe you didn't have any experience like that at all. If so, as the first thought, you may think, "oh! it won't be a big deal"? and, you may suggest to use `opacity` to do the job. 
+And the next moment, I got a weird result and thought about another option.
 
-And the next moment, you might be wondering, okay if the `opacity` does the job then what does the *alpha* value of the `rgba()` do?
+Which was `rgba()` and, it worked for me.
+
+But, it's not the problem. If the alpha value of `rgba()` can do the job, why do we need the `opacity` in any way? 
 
 It seems there are some questions to be solved, right?
 
 So let's dig into the details.
 
 We have a blue color inner element and orange color background element like below.
-$ screenshot: withot blur $
+$ screenshot: without blur $
 
-And, we want the background element to be blured like below.
+And, we want the background element to be blurred, like below.
 
 $ screenshot: with blur $
 
@@ -27,11 +30,11 @@ To get that output, we can try the following options.
 3. Using *rgba()* for the parent element
 4. Changing *visibility* to *hidden* or *color* to *transparent* (to completely hide the background element)
 
-Let's try these options one by one to achieve our requirement.
+Let's try these options one by one to achieve our requirements.
 
 ### 1. Using two separate elements
 
-Here, we have two separate `div` called `outside-div` and `inside-div`.
+Here, we have two separate `div` called `outside-div` and `inside-div`
 
 ```html
 
@@ -44,9 +47,9 @@ Here, we have two separate `div` called `outside-div` and `inside-div`.
 
 ```
 
-In the CSS, before doing anything let's center everything on the screen at the first place. 
+In the CSS, before doing anything, let's center everything on the screen in the first place. 
 
-Using *flex* with the `body`, we can center everything on the screen. 
+Here, we use *flexbox* to do the job.
 
 ```css
 
@@ -76,7 +79,7 @@ Then, give some `width`, `height` and `background-color` to the `outside-div` an
 }
 
 ```
-And, to drag the both `div` bit down from the top of the screen, we can use `position: absolute` and `top: 25%` for the both elements. 
+And, to drag both `div` a bit down from the top of the screen, we can use `position: absolute` and `top: 25%` for both elements. 
 
 ```css
 
@@ -93,7 +96,9 @@ And, to drag the both `div` bit down from the top of the screen, we can use `pos
 
 ```
 
-Next, we have to center the `inside-div` inside the `outside-div`. To do that we can set the `margin-top` value like below.
+Next, we have to center the `inside-div` inside the `outside-div`.
+
+To do that, we can set the `margin-top` value like below.
 
 **_`margin-top` for the innermost div = ((height of outermost div) - (height of innermost div))/ 2_**
 
@@ -105,7 +110,7 @@ Next, we have to center the `inside-div` inside the `outside-div`. To do that we
 
 ```
 
-Now we can easily make the `opacity: 0.3` of the `outside-div`.
+Now, set the `opacity` as `0.3` of the `outside-div`.
 
 ```css
 
@@ -115,7 +120,7 @@ Now we can easily make the `opacity: 0.3` of the `outside-div`.
 
 ```
 
-And, here is our full CSS code.
+And, here is our complete CSS code.
 
 ```css
 
@@ -154,22 +159,22 @@ body {
 
 Oh, it works!
 
-Finally we're finished with solving the problem!
+Finally, we're finished with solving the problem!
 
-But hold on, why are we only using two separeate elements? 
+But hold on, why are we only using two separate elements? 
 
-Is there any luck with parent and child elements or maybe an element with its pseudo (`:before` or `:after`) element instead, where we should have to use them?
+Is there any luck with parent and child elements, or maybe, an element with its pseudo (`:before` or `:after`) element instead, where we should have to use them?
 
 Well, the answer is *YES*!
 
-However, some of them can be bit tricky. 
+However, some of them can be a bit tricky. 
 
-So let's take a look how to blur an background element that has child/pseudo element as its inner element.
+So let's take a look at how to blur a background element that has a child element/pseudo-element as its inner element.
 
 ### 2. Using *opacity* for the parent element
 
 
-One of ways to blur an element is using `opacity` property. 
+One of the ways to blur an element is using the `opacity` property. 
 
 In simple words, the `opacity` sets the see-through (transparent) level of an element. If its value is,
 
@@ -181,7 +186,7 @@ In simple words, the `opacity` sets the see-through (transparent) level of an el
 
 So let's try to use `opacity`. 
 
-This is our HTML code.
+Here is our HTML code.
 
 ```html
 
@@ -195,7 +200,7 @@ This is our HTML code.
 
 #### Using *opacity* - 1st Attempt: 
 
-In the CSS we have a `div` called `#box` and, we have a pseudo element (`#box:before`) of it. 
+So, we have a `div` element called `#box` and a pseudo-element (`#box:before`) in it.
 
 ```css
 
@@ -215,9 +220,9 @@ In the CSS we have a `div` called `#box` and, we have a pseudo element (`#box:be
 ```
 
 
-As the first thing let us place them neatly.
+As the first thing, let us place them neatly.
 
-To do so, make the `#box:before` as centered using *flex* inside the `#box`. Also, make the `position` as `absolute` of the `#box` and, push it down by `25%` away from the screen. 
+Also, make the `position` as `absolute` of the `#box` and push it down by `25%` away from the screen. 
 
 ```css
 
@@ -245,7 +250,7 @@ body {
 
 
 
-As the final thing we can set the `opacity: 0.3` to the `#box`.
+As the final thing, set the `opacity` of the `#box` as `0.3`.
 
 ```css
 
@@ -287,13 +292,13 @@ body {
 
 ``` 
 
-This is the visual result that we've got.
+Here is the visual result that we've got.
 
 $ screenshot: not working opacity $
 
-Okay, I know what you are thinking right now. Because it isn't the result that we expected, right?
+Okay, I know what you are thinking right now. Because it isn't the result that we expected, right? 
 
-What we just want is make the `opacity` of the `#box` as 0.3 and `opacity` of the `#box:before` as 1 (default opacity).
+We only want to make the `opacity` of the `#box` as 0.3 and `opacity` of the `#box:before` as 1 (default opacity).
 
 
 #### Using *opacity* - 2nd Attempt: 
@@ -410,9 +415,9 @@ $ screenshot: working opacity $
 
 #### 3. Using *rgba()* for the parent element
 
-This is another way to get the expected result. And, it is the most simple one. 
+Let's try another way to get the expected result. And, it is the most simple one. 
 
-All you need to do is just remove the `opacity: 0.3` from `#box` and change its `background-color` as `rgba()` color and set your opacity as the fourth value there.  
+All you need to do is, remove the `opacity: 0.3` from `#box` and change its `background-color` as `rgba()` colors and set your opacity as the fourth value there.  
 
 ```css
 
@@ -445,9 +450,9 @@ $ screenshot: working rgba() $
 
 #### 4. Changing visibility to hidden or color to transparent (to completely hide the background element) 
 
-If your requirement is only make the background `div` as **_invisible_**, better to mention, just make the child/pseudo element as visible and background (parent) element invisible. 
+If your requirement is only to make the background `div` as **_invisible_**, it's better to make the child element/pseudo-element as *visible* and the background (parent) element as *invisible*. 
 
-You can simply use this code for it.
+You can use this code for it.
 
 ```css
 
@@ -491,36 +496,36 @@ Or you can use `color: transparent` for the background (parent) element.
 
 ### Which one is better - *opacity* or *rgba()*?
 
-Now let us turn in to the ideal question, *which one is better?*
+Now, let us turn into the ideal question *which one is better?*
 
-By looking at methods that used `opacity` and `rgba()` that we discussed above you may wondering which one is better to use for your specific case. 
+By looking at methods that used `opacity` and `rgba()` that we discussed above, you might be wondering which one is better to use for your specific case. 
 
 Well, as always, it depends.
 
-However, let me explain some of differences between both of them.
+However, let me explain some of the differences between both of them.
 
 * The value of `opacity` applies to the whole element, including its child elements, text, borders, colors, etc.
 
-* In the meantime, *alpha* value (which used to set the opacity) of the `rgba()` only applies to the color of that particular element.
+* In the meantime, the *alpha* value of the `rgba()` only applies to the color of that particular element. 
 
-So that's the reason you got the `#box:before` as blured at our 1st attempt where we used `opacity` to blur only the background element.
+So that's the reason you got the `#box:before` as blurred at our 1st attempt where we used `opacity` to blur only the background element.
 
-Also, since the same reason, you may feel some visual differences between two results where we got the expected result using `opacity` and `rgba()`.
+Also, for the same reason, you may feel some visual differences between the two results where we got the expected result using `opacity` and `rgba()`.
 
-In my opinion, it is better to use `rgba()` if you just want to blur the background element only.
+In my opinion, it is better to use `rgba()` if you only want to blur the background element.
 
 ### Conclusion
 
-As the last thing, let me recap what you exactly got from this artcle. 
+As the last thing, let me recap what you exactly got from this article. 
 
 
-* a few ways to blur the background element without affecting its internal elements. 
+* a few ways to blur the background element without affecting its inner contents. 
 
 * some sense of the difference between `opacity` and `rgba()` 
 
 * some sense of where to use `opacity` and where to use `rgba()` based on your specific requirement.
 
-If you enjoyed this post find me at [ko-fi](https://ko-fi.com/mkdaycode). I always appreciate your support, it really encourages me to keep going. 
+I hope you enjoyed this article, and you can support me at [ko-fi](https://ko-fi.com/mkdaycode). I always appreciate your support. It really encourages me to keep going. 
 
 **_Happy Coding!_** 
 
